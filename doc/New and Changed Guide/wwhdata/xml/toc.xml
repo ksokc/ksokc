@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WebWorksHelpTOC version="5.0" xmlns="urn:WebWorks-Help-TOC-Schema">
+  <i t="About PolicyCenter Documentation" l="1">
+    <i t="Conventions in This Document" l="1#2121726" />
+    <i t="Support" l="1#2121769" />
+  </i>
+  <i t="What’s New and Changed in 8.0 Maintenance Releases" l="2#1294946">
+    <i t="New and Changed in PolicyCenter 8.0.3" l="3">
+      <i t="New in PolicyCenter 8.0.3" l="4">
+        <i t="Product Model Loader" l="4#2614482" />
+        <i t="Account Lockout in Product Designer" l="4#2616584" />
+        <i t="Security Features in Product Designer" l="4#2617037" />
+      </i>
+      <i t="Changed in PolicyCenter 8.0.3" l="5">
+        <i t="Changes in Rating Management" l="5#2614557" />
+        <i t="Support for Oracle Partitioned Indexes" l="5#2616257" />
+        <i t="Upgrade to Free-text Search" l="5#2593143" />
+      </i>
+    </i>
+    <i t="New and Changed in PolicyCenter 8.0.2" l="6">
+      <i t="New in PolicyCenter 8.0.2" l="7">
+        <i t="Multicurrency Integration between BillingCenter and PolicyCenter" l="7#2583818" />
+        <i t="New Plugin Interface InboundIntegrationMessageReply" l="7#2584187" />
+        <i t="Duplicating a Product Offering in Product Designer" l="7#2592415" />
+      </i>
+      <i t="Changed in PolicyCenter 8.0.2" l="8">
+        <i t="Removed Configuration Parameters" l="8#2581606" />
+        <i t="Changes to Rating Management" l="8#2581720" />
+        <i t="Complex Schedules" l="8#2591310" />
+        <i t="Changes to the Product Model" l="8#2583096" />
+        <i t="Integration Changes" l="8#2586386" />
+      </i>
+    </i>
+    <i t="New and Changed in PolicyCenter 8.0.1" l="9">
+      <i t="New in PolicyCenter 8.0.1" l="10">
+        <i t="New in Rating Management" l="11" />
+        <i t="High Volume Requests for Quotes" l="12" />
+        <i t="Affinity Groups" l="13" />
+        <i t="New Support for OSGi Plugins" l="14" />
+        <i t="Gosu Using Clause Now Supports Finally Clause" l="15" />
+      </i>
+      <i t="Changed in PolicyCenter 8.0.1" l="16">
+        <i t="Changes to Rating Management" l="17" />
+        <i t="Changes to Web Service Transaction IDs" l="18" />
+        <i t="Change to Inbound Integration Configuration" l="19" />
+        <i t="Gosu Suppress Warnings Annotation" l="20" />
+        <i t="Gosu Compound Assignment Operators for Logical AND and Logical OR" l="21" />
+      </i>
+    </i>
+  </i>
+  <i t="What’s New and Changed in 8.0.0" l="22#1294946">
+    <i t="New and Changed in PolicyCenter 8.0" l="23">
+      <i t="New in PolicyCenter 8.0" l="24">
+        <i t="Account Holder Info Screen" l="25" />
+        <i t="Policy Data Spreadsheet Import/Export" l="26" />
+        <i t="Multicurrency Policies" l="27" />
+        <i t="Service Tier Field on Account" l="28" />
+        <i t="Data Change Menu Link" l="28#2535118" />
+        <i t="Changing the Screen Layout" l="28#2535178" />
+      </i>
+      <i t="Changed in PolicyCenter 8.0" l="29">
+        <i t="Policy Transactions" l="30" />
+        <i t="Changes to the Team Tab" l="31" />
+        <i t="Administration Menu Items Reorganized" l="32" />
+        <i t="Rate Routine Label Changed" l="33" />
+        <i t="Service Tier Field on Account" l="34" />
+        <i t="My Submissions Screen" l="35" />
+        <i t="My Other Policy Transactions Screen" l="36" />
+        <i t="Region and Region Search Screens Combined" l="37" />
+        <i t="Reinsurance Attachment Inclusions" l="38" />
+        <i t=" " l="38#2475032" />
+      </i>
+    </i>
+    <i t="New and Changed in Configuration in 8.0" l="39">
+      <i t="Important Changes to the Configuration Module" l="40" />
+      <i t="Changes to the Data Model" l="41" />
+      <i t="Changes to the Generate Dictionary Command" l="42" />
+      <i t="Changes to Guidewire Studio" l="43">
+        <i t="Studio Now Built on IntelliJ IDEA Community Edition" l="43#2521080" />
+        <i t="Gosu Tester" l="43#2521082" />
+        <i t="Display Keys Editor" l="43#2519183" />
+        <i t="Studio Features That Are No Longer Available" l="43#2521803" />
+        <i t="Editing the Product Model" l="43#2536959" />
+      </i>
+      <i t="Changes to Configuration Parameters" l="44">
+        <i t="Removed Configuration Parameters" l="44#2515881" />
+        <i t="Added Configuration Parameters" l="44#2520483" />
+        <i t="Changed Configuration Parameters" l="44#2520502" />
+      </i>
+      <i t="Changes to Web Services" l="45" />
+      <i t="Changes Related to PCF Files" l="46">
+        <i t="Template Page PCF Files Removed" l="46#2537468" />
+        <i t="Miscellaneous PCF Changes" l="46#2537461" />
+      </i>
+      <i t="Changes to Search Criteria" l="47">
+        <i t="Gosu Classes that Extend EntitySearchCriteria" l="47#2536996" />
+        <i t="Gosu Classes that Extend SearchCriteria" l="47#2537162" />
+      </i>
+      <i t="Changes to Configuring PolicyCenter" l="48">
+        <i t="Changes to Team Tab Configuration" l="49" />
+        <i t="Changes to Configuring Underwriting Authority" l="50" />
+      </i>
+      <i t="Changes to the PolicyCenter Product Model" l="51">
+        <i t="All Coverage Terms Must Have Value Types" l="51#2537243" />
+        <i t="Changes to Validation" l="51#2537277" />
+        <i t="New Documentation" l="51#2537287" />
+      </i>
+      <i t="Changes to Configuring Lines of Business" l="52">
+        <i t="Lines of Business Modularization" l="53" />
+        <i t="Registering Lines of Business" l="53#2537322" />
+        <i t="Product Type Property" l="53#2537334" />
+        <i t="Policy Line Configuration Class" l="53#2537336" />
+        <i t="Logical Matcher Replaces checkForDuplicates Method" l="53#2537338" />
+        <i t="Blank Availability Rows are Not Valid" l="53#2537340" />
+        <i t="Handling Visibility of Coverages" l="53#2537347" />
+      </i>
+      <i t="Changes Related to Integrating with ContactManager" l="54" />
+    </i>
+    <i t="New and Changed in Product Designer in 8.0" l="55">
+      <i t="Editing the Product Model" l="55#2527887">
+        <i t="Changes to Validation" l="55#2531743" />
+        <i t="New Documentation" l="55#2527013" />
+      </i>
+    </i>
+    <i t="New and Changed in Gosu in 8.0" l="56">
+      <i t="New in Gosu in PolicyCenter 8.0" l="57">
+        <i t="New Assert Statement" l="58" />
+        <i t="In For Loop Declarations, Local Variable is Now Optional" l="59" />
+        <i t="Final Variable Initialization Separate from Declaration" l="60" />
+        <i t="The new Operator is Now Optionally a Statement" l="61" />
+        <i t="Support Annotations on Function Parameters" l="62" />
+        <i t="Named Arguments in Annotations" l="63" />
+        <i t="New Support for Code Coverage Tools for Gosu Code" l="64" />
+        <i t="The Entity Touch API is Changed and No Longer Deprecated" l="65" />
+      </i>
+      <i t="Changed in Gosu in PolicyCenter 8.0" l="66">
+        <i t="Gosu is Now Case Sensitive In Most Cases" l="66#2585220" />
+        <i t="Bundle Changes from Gosu and Java" l="67" />
+        <i t="Gosu Map Enhancement Method Changes" l="68" />
+        <i t="Entity Literal Syntax is Deprecated" l="69" />
+        <i t="Entity Methods loadByKey, loadByPublicID, and remove Deprecated" l="70" />
+        <i t="Packages Changed to Reflect Public and Internal Status" l="71" />
+        <i t="Gosu Concurrency API Changes" l="72" />
+        <i t="The &lt;&gt; Inequality Operator Is Now Invalid" l="73" />
+        <i t="The Gosu Command Line Tool Built-in Editor Removed" l="74" />
+        <i t="Change in Gosu Named Parameters Usage" l="75" />
+      </i>
+    </i>
+    <i t="New and Changed in Integration in 8.0" l="76">
+      <i t="New in Integration in PolicyCenter 8.0" l="77">
+        <i t="New Phone Number Normalizer Plugin" l="78" />
+        <i t="High Availability for Free-Text Search with Apache Zookeeper" l="79" />
+        <i t="New MTOM Support for Results of Published WS-I Web Service" l="80" />
+        <i t="Multi-threaded Inbound Integration" l="81" />
+        <i t="New PolicyEarnedPremiumAPI Web Service" l="82" />
+        <i t="New Plugin Interface IFXRatePlugin" l="83" />
+        <i t="New Messaging Destination Option for Messages Without Primary Object" l="84" />
+        <i t="Regenerating WSDL and XSD in Web Service Collections (regen-from-wsc)" l="85" />
+      </i>
+      <i t="Changed in Integration in PolicyCenter 8.0" l="86">
+        <i t="RPCE Web Services Deprecated in 8.0" l="87" />
+        <i t="Changes to Existing Web Services" l="88" />
+        <i t="Important Changes for Java Code" l="89" />
+        <i t="Plugin Registry Changes in Studio" l="90" />
+        <i t="Changes to Importing the PolicyCenter Product Model into ClaimCenter" l="91" />
+        <i t="Changes to Document Management Integration" l="92" />
+        <i t="Changes to Plugins and Classes for Line-of-business Modularization" l="93" />
+        <i t="ClaimCenter Typelist Generator Tool" l="94" />
+        <i t="Contact Messaging Flow Changed" l="95" />
+        <i t="PolicyCenter Plugin Changes For Multicurrency" l="96" />
+        <i t="Free-text Search Upgrades" l="97" />
+        <i t="New PCPolicyPublicID Property in Web Services Methods" l="98" />
+      </i>
+    </i>
+    <i t="New and Changed in System Administration in 8.0" l="99">
+      <i t="New in System Administration in 8.0" l="100">
+        <i t="Phone Number Normalizer Work Queue" l="101" />
+      </i>
+      <i t="Changed in System Administration in 8.0" l="102">
+        <i t="Changes to Database Configuration" l="103" />
+        <i t="Changes to Work Queue Configuration" l="104" />
+        <i t="Changes to Scheduled Purge Batch Processes" l="105" />
+        <i t="Changes to Database Statistics Updating" l="106" />
+        <i t="User Batch Process Now Named Team Screens" l="107" />
+      </i>
+    </i>
+    <i t="New and Changed in Rules in 8.0" l="108">
+      <i t="Changes in Rules in PolicyCenter 8.0" l="109">
+        <i t="Preupdate Rules Removed" l="110" />
+        <i t="Evaluation Rule Set Functionality Replaced" l="111" />
+      </i>
+    </i>
+    <i t="New and Changed in Globalization in 8.0" l="112">
+      <i t="New to Globalization in PolicyCenter 8.0" l="113">
+        <i t="Separation of Language and Regional Format" l="114" />
+        <i t="Base Configuration Language Support" l="115" />
+        <i t="Base Configuration Region Support" l="116" />
+        <i t="Base Configuration Currency Support" l="117" />
+        <i t="Base Configuration Geographical Support" l="118" />
+        <i t="Phone Number Data and Phone Validator Gosu Class" l="119" />
+        <i t="Automatic Address Completion and Fill-in Plugin Functionality" l="120" />
+        <i t="Ability to Provide a Sort Order for the Typecodes in a Typelist" l="121" />
+        <i t="Language Module Installation Utility" l="122" />
+        <i t="Globalization-related Configuration Parameters" l="123" />
+        <i t="Globalization-related Typelists" l="124" />
+        <i t="Ability to Set First Day of Week by Region" l="125" />
+        <i t="New in the PolicyCenter 8.0 Data Model" l="126" />
+      </i>
+      <i t="Changes to Globalization in PolicyCenter 8.0" l="127">
+        <i t="Changes to Address Configuration 8.0" l="128" />
+        <i t="Changes to Admin Data Localization" l="129" />
+        <i t="Changes to 8.0 Typelists" l="130" />
+        <i t="Changes to Files Used with Globalization" l="131" />
+        <i t="List Sort Methods Support Optional Locale Sensitive Sorting" l="131#2114013" />
+      </i>
+    </i>
+  </i>
+  <i t="What’s New and Changed in 7.0.0" l="132#1294946">
+    <i t="New and Changed in PolicyCenter 7.0" l="133">
+      <i t="PolicyCenter Lines of Business" l="134">
+        <i t="New Commercial Property Blankets" l="135" />
+        <i t="Copying Coverages" l="136" />
+        <i t="Changes to Personal Auto" l="137" />
+        <i t="Business Auto Becomes Commercial Auto" l="138" />
+      </i>
+      <i t="PolicyCenter Jobs" l="139">
+        <i t="Side-by-side Quoting" l="140" />
+        <i t="Rescheduling a Cancellation" l="141" />
+        <i t="Changing the Effective Date of a Policy Change" l="142" />
+        <i t="Rewrite New Account Job" l="143" />
+      </i>
+      <i t="PolicyCenter Components" l="144">
+        <i t="Changes to Activities" l="145" />
+        <i t="Changes to Account History Screen and Events" l="146" />
+        <i t="Account Relationships" l="147" />
+        <i t="Moving or Rewriting Policies Between Accounts" l="148" />
+        <i t="Merging Accounts" l="149" />
+        <i t="Copying Data Between Policies" l="150" />
+        <i t="Splitting and Spinning Policies" l="151" />
+        <i t="Contact Tab" l="152" />
+        <i t="Linking Addresses on Contacts" l="153" />
+        <i t="Updating Contacts in Effective Time" l="154" />
+        <i t="Reinsurance" l="155" />
+        <i t="Change to End Date Field in Underwriting Entities" l="156" />
+      </i>
+      <i t="Administering PolicyCenter" l="157">
+        <i t="Administering Policy Holds" l="158" />
+        <i t="Changes to Administering Policy Forms" l="159" />
+        <i t="Reassigning Job Roles" l="160" />
+      </i>
+      <i t="Product Integrations" l="161">
+        <i t="Changes to the Billing System Integration" l="162" />
+      </i>
+    </i>
+    <i t="New and Changed in Configuration in 7.0" l="163">
+      <i t="Changes to the Data Model" l="164">
+        <i t="Deprecation of MotorVehicleRecord" l="164#2534048" />
+        <i t="Modifications to Search Functionality" l="164#2440540" />
+        <i t="Modifications to Associative Arrays" l="164#2493037" />
+      </i>
+      <i t="Changes to Guidewire Studio" l="165">
+        <i t="Modifications to Type System Refresh" l="165#2387944" />
+        <i t="Modifications to the Resources Pane" l="165#2325013" />
+        <i t="Modifications to Tools Options" l="165#2323986" />
+        <i t="Modifications to Dialogs" l="165#2484982" />
+        <i t="Modifications to Typelists" l="165#2534070" />
+      </i>
+      <i t="Changes to Configuration Parameters" l="166" />
+      <i t="Changes to Web Services" l="167" />
+      <i t="Changes Related to PCF Files" l="168">
+        <i t="New iterator Attribute on Buttons" l="168#2327971" />
+        <i t="New disablePostOnEnter Attribute on Cell" l="168#2328498" />
+        <i t="New onEnter Attribute on WizardStep" l="168#2328453" />
+        <i t="New isDraftOnEnter Attribute" l="168#2490695" />
+        <i t="New Link widgets Menu Command" l="168#2526366" />
+        <i t="New Exposes Tab on ListViewPanel Widget" l="168#2328660" />
+        <i t="Deprecated Unintended ListView ContentCell Configuration" l="168#2330108" />
+        <i t="New Modal Cell and CellRef Widgets" l="168#2327549" />
+        <i t="New CheckedValuesMenuItem Iterator" l="168#2329184" />
+      </i>
+      <i t="Changes to the PolicyCenter Product Model" l="169">
+        <i t="Changes to Question Sets" l="169#2534177" />
+        <i t="New Reloading Availability Data on a Running Server" l="169#2534194" />
+        <i t="Quote Rounding Level Within a Product" l="169#2534206" />
+      </i>
+      <i t="Changes to Configuring Lines of Business" l="170">
+        <i t="Changes to Studio Icons for a Line of Business" l="170#2534228" />
+        <i t="Configuring Copy Data for a Line of Business" l="170#2534245" />
+      </i>
+      <i t="Improvements in Localization" l="171">
+        <i t="Address Localization" l="171#2534289" />
+        <i t="Typelist Localization" l="171#2325158" />
+        <i t="New Jurisdiction Typelist" l="171#2534325" />
+        <i t="Display Key Localization" l="171#2389749" />
+        <i t="Command Line Export Translation File Import Tool" l="171#2364715" />
+      </i>
+    </i>
+    <i t="New and Changed in Gosu in 7.0" l="172">
+      <i t="New in Gosu in 7.0" l="173">
+        <i t="Gosu Support for Intervals" l="174" />
+        <i t="Gosu Support for Numeric Literals" l="175" />
+        <i t="New Null-safe Operators" l="176" />
+        <i t="New Named Function Arguments and Argument Defaults" l="177" />
+      </i>
+      <i t="Changed in Gosu in 7.0" l="178">
+        <i t="Gosu Compiles to Java Virtual Machine Bytecode" l="179" />
+        <i t="Gosu Syntax Changes (Compile Time Issues)" l="180" />
+        <i t="Gosu Behavior Changes (Run Time Issues)" l="181" />
+        <i t="New XML APIs and Improved XSD Support Using ‘XmlElement’" l="182" />
+        <i t="Guidewire XML Modeler (GX Modeler) Upgraded to Use New XML API" l="183" />
+        <i t="Interceptors Removed" l="184" />
+      </i>
+    </i>
+    <i t="New and Changed in Integration in 7.0" l="185">
+      <i t="New in Integration in 7.0" l="186">
+        <i t="Motor Vehicle Record (MVR) Plugin" l="187" />
+        <i t="Reinsurance Architecture and Plugin" l="188" />
+        <i t="New ClaimCenter PolicyCenter Integration" l="189" />
+        <i t="Policy Hold Evaluation Plugin" l="190" />
+        <i t="New Populator Plugin" l="191" />
+        <i t="New Methods in ProductModelAPI" l="192" />
+      </i>
+      <i t="Changes in Integration in 7.0" l="193">
+        <i t="WS-I Web Services" l="194" />
+        <i t="Suite Configuration File Overrides URLs to Guidewire Applications" l="194#2405432" />
+        <i t="Setting Locale in WS-I Requests for Guidewire Servers Only" l="195" />
+        <i t="Changes to Locally-Accessed RPCE Web Services" l="196" />
+        <i t="IAccountPlugin Web Service Changes for Transferring Policies" l="197" />
+        <i t="SubmissionAPI Changes" l="198" />
+        <i t="PolicyAPI Changes" l="199" />
+        <i t="PolicyRenewalAPI Changes" l="200" />
+        <i t="Confirming Renewals Integration Flow" l="201" />
+        <i t="Guidewire InsuranceSuite Plugin Implementations are Versioned" l="202" />
+        <i t="SOAP Implementation Classes and WSDL Packages Include Version" l="203" />
+        <i t="Geocoding Only Some Addresses" l="204" />
+        <i t="Changes to PolicyCenter Contact-related Plugins" l="205" />
+        <i t="ContactAPI Web Service Changes" l="206" />
+        <i t="Improvements to Matching Classes" l="207" />
+        <i t="Escalation and Exception Plugins" l="208" />
+        <i t="Billing Plugin Changes" l="209" />
+        <i t="Billing Summary Plugin Changes" l="210" />
+        <i t="For Messaging, a Contact is a Now a Safe-ordered Object" l="211" />
+        <i t="Integrating PolicyCenter 7.0.0 with ClaimCenter 6.0.0" l="212" />
+        <i t="AccountSyncable Changes" l="213" />
+        <i t="Changes to Messaging System Safe Ordering" l="214" />
+      </i>
+    </i>
+    <i t="New and Changed in System Administration in 7.0" l="215">
+      <i t="New in System Administration in 7.0" l="216">
+        <i t="DCE VM Strongly Recommended for Development Environments" l="217" />
+        <i t="Support for Importing and Exporting Policy Forms and Policy Holds" l="218" />
+      </i>
+      <i t="Changed in System Administration in 7.0" l="219">
+        <i t="Updated System Requirements" l="220" />
+        <i t="Database Configuration Changes" l="221" />
+        <i t="Maximum Contact Search Results Parameter Name" l="222" />
+      </i>
+    </i>
+    <i t="New and Changed in Rules in 7.0" l="223">
+      <i t="Changes in Rules in PolicyCenter 7.0" l="224" />
+    </i>
+  </i>
+  <i t="Release Notes Archive" l="225#1034447">
+    <i t="Guidewire PolicyCenter 8.0.2 Release Notes" l="226">
+      <i t="Overview" l="226#3425803" />
+      <i t="Release Information" l="226#1569125">
+        <i t="Version Number" l="226#3676495" />
+      </i>
+      <i t="Critical Action Required" l="226#5149586" />
+      <i t="Installing This Release" l="226#3676474">
+        <i t="Upgrade Information" l="226#5120175" />
+      </i>
+      <i t="Support" l="226#5183011" />
+      <i t="Major Issues and Changes" l="226#3425898">
+        <i t="Base PCF File Changes" l="226#3893124" />
+        <i t="Base Resource Changes" l="226#4240363" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="226#3463393" />
+      </i>
+      <i t="Improvements and Resolved Issues" l="226#4617705">
+        <i t="PolicyCenter Improvements and Resolved Issues" l="226#4617707" />
+        <i t="Product Designer Improvements and Resolved Issues" l="226#4977903" />
+        <i t="Platform Improvements and Resolved Issues" l="226#4777428" />
+      </i>
+      <i t="Known Issues and Limitations" l="226#4630506">
+        <i t="PolicyCenter Known Issues" l="226#4238144" />
+        <i t="Product Designer Known Issues" l="226#4617010" />
+        <i t="Studio/Platform Known Issues" l="226#4237640" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 8.0.1 Release Notes" l="227">
+      <i t="Overview" l="227#3425803" />
+      <i t="Release Information" l="227#1569125">
+        <i t="Version Number" l="227#3676495" />
+      </i>
+      <i t="Critical Action Required" l="227#5037281" />
+      <i t="Installing This Release" l="227#3676474" />
+      <i t="Support" l="227#5072480" />
+      <i t="Issues and Major Changes" l="227#3425898">
+        <i t="Product Designer Localization" l="227#4620357" />
+        <i t="Product Designer Requires Committing All Change Lists Before Upgrading PolicyCenter" l="227#4959984" />
+        <i t="Base PCF File Changes" l="227#3893124" />
+        <i t="Base Resource Changes" l="227#4240363" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="227#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="227#4617705">
+        <i t="PolicyCenter Improvements and General Issues" l="227#4617707" />
+        <i t="Product Designer Improvements and General Issues" l="227#4777427" />
+        <i t="Platform Improvements and General Issues" l="227#4777428" />
+      </i>
+      <i t="Known Issues and Limitations" l="227#4630506">
+        <i t="PolicyCenter Known Issues" l="227#4238144" />
+        <i t="Product Designer Known Issues" l="227#4617010" />
+        <i t="Studio/Platform Known Issues" l="227#4237640" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 8.0.0 Release Notes" l="228">
+      <i t="Overview" l="228#3425803" />
+      <i t="Release Information" l="228#1569125">
+        <i t="Version Number" l="228#3676495" />
+      </i>
+      <i t="Critical Action Required" l="228#4613034" />
+      <i t="Installing This Release" l="228#3676474" />
+      <i t="Support" l="228#4643977" />
+      <i t="Issues and Major Changes" l="228#3425898">
+        <i t="Upgrade does not convert Money properties to MonetaryAmount properties in entity extensions" l="228#4346440" />
+        <i t="Base PCF File Changes" l="228#3893124" />
+        <i t="Base Resource Changes" l="228#4240363" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="228#3463393" />
+      </i>
+      <i t="Known Issues and Limitations" l="228#3426832">
+        <i t="PolicyCenter Known Issues" l="228#4238144" />
+        <i t="Product Designer Known Issues" l="228#4318851" />
+        <i t="Studio/Platform Known Issues" l="228#4237640" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.8 Release Notes" l="229">
+      <i t="Overview" l="229#3425803" />
+      <i t="Release Information" l="229#1569125">
+        <i t="Version Number" l="229#3676495" />
+      </i>
+      <i t="Critical Action Required" l="229#4377222" />
+      <i t="Installing This Release" l="229#3676474" />
+      <i t="Support" l="229#4494659" />
+      <i t="Issues and Major Changes" l="229#3425898">
+        <i t="Upgrade Issues" l="229#4256318" />
+        <i t="Additions and Changes to Rating Management" l="229#4246567" />
+        <i t="Base PCF File Changes" l="229#4259485" />
+        <i t="Base Resources Changes" l="229#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="229#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="229#3426844">
+        <i t="PolicyCenter Improvements and General Issues" l="229#3891641" />
+        <i t="Platform Improvements and General Issues" l="229#3891694" />
+      </i>
+      <i t="Known Issues and Limitations" l="229#4260519">
+        <i t="PolicyCenter Known Issues" l="229#3432364" />
+        <i t="Studio/Platform Known Issues" l="229#4052842" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.7 Release Notes" l="230">
+      <i t="Overview" l="230#3425803" />
+      <i t="Release Information" l="230#1569125">
+        <i t="Version Number" l="230#3676495" />
+      </i>
+      <i t="Critical Action Required" l="230#4237446" />
+      <i t="Installing This Release" l="230#3676474" />
+      <i t="Support" l="230#4269771" />
+      <i t="Issues and Major Changes" l="230#3425898">
+        <i t="Base PCF File Changes" l="230#3893124" />
+        <i t="Base Resources Changes" l="230#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="230#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="230#3426844">
+        <i t="PolicyCenter Improvements and General Issues" l="230#3891641" />
+        <i t="Platform Improvements and General Issues" l="230#3891694" />
+      </i>
+      <i t="Known Issues and Limitations" l="230#3426832">
+        <i t="PolicyCenter Known Issues" l="230#3432364" />
+        <i t="Studio/Platform Known Issues" l="230#4052842" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.6 Release Notes" l="231">
+      <i t="Overview" l="231#3425803" />
+      <i t="Release Information" l="231#1569125">
+        <i t="Version Number" l="231#3676495" />
+      </i>
+      <i t="Critical Action Required" l="231#4195234" />
+      <i t="Installing This Release" l="231#3676474" />
+      <i t="Support" l="231#4284662" />
+      <i t="Issues and Major Changes" l="231#3425898">
+        <i t="Quote Purging" l="231#3845823" />
+        <i t="Free-text Search" l="231#3845850" />
+        <i t="Rating Management" l="231#3892760" />
+        <i t="Base PCF File Changes" l="231#3893124" />
+        <i t="Base Resources Changes" l="231#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="231#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="231#3426844">
+        <i t="PolicyCenter Improvements and General Issues" l="231#3891641" />
+        <i t="Platform Improvements and General Issues" l="231#3891694" />
+      </i>
+      <i t="Known Issues and Limitations" l="231#3426832">
+        <i t="PolicyCenter Known Issues" l="231#3432364" />
+        <i t="Studio/Platform Known Issues" l="231#3600048" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.5 Release Notes" l="232">
+      <i t="Overview" l="232#3425803" />
+      <i t="Release Information" l="232#1569125">
+        <i t="Version Number" l="232#3676495" />
+      </i>
+      <i t="Installing This Release" l="232#3676474" />
+      <i t="Support" l="232#3849416" />
+      <i t="Issues and Major Changes" l="232#3425898">
+        <i t="Changes and Additions to Rating Management" l="232#3433993" />
+        <i t="Generic Schedules" l="232#3463444" />
+        <i t="Localization Improvements" l="232#3761880" />
+        <i t="Logging API Changes" l="232#3761874" />
+        <i t="Base PCF File Changes" l="232#3680098" />
+        <i t="Base Resources Changes" l="232#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="232#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="232#3426844" />
+      <i t="Known Issues and Limitations" l="232#3426832">
+        <i t="PolicyCenter Known Issues" l="232#3432364" />
+        <i t="Studio/Platform Known Issues" l="232#3600048" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.4 Release Notes" l="233">
+      <i t="Overview" l="233#3425803" />
+      <i t="Release Information" l="233#1569125">
+        <i t="Version Number" l="233#3391015" />
+      </i>
+      <i t="Installing This Release" l="233#1556198" />
+      <i t="Support" l="233#3735662" />
+      <i t="Issues and Major Changes" l="233#3425898">
+        <i t="Changes and Additions to Rating Management" l="233#3433993" />
+        <i t="Base PCF File Changes" l="233#3463444" />
+        <i t="Base Resources Changes" l="233#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="233#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="233#3426844" />
+      <i t="Known Issues and Limitations" l="233#3426832">
+        <i t="PolicyCenter Known Issues" l="233#3432364" />
+        <i t="Studio/Platform Known Issues" l="233#3600048" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.3 Release Notes" l="234">
+      <i t="Overview" l="234#3425803" />
+      <i t="Release Information" l="234#1569125">
+        <i t="Version Number" l="234#3391015" />
+      </i>
+      <i t="Installing This Release" l="234#1556198" />
+      <i t="Support" l="234#3594810" />
+      <i t="Issues and Major Changes" l="234#3425898">
+        <i t="Integrating with BillingCenter" l="234#3433993" />
+        <i t="Archiving in PolicyCenter" l="234#3539108" />
+        <i t="Changes to Search Requirements" l="234#3506231" />
+        <i t="Policy Location Search API" l="234#3519760" />
+        <i t="Studio Product Model Improvements" l="234#3527234" />
+        <i t="Guidewire Standard Reporting" l="234#3527082" />
+        <i t="Base PCF File Changes" l="234#3463444" />
+        <i t="Base Resources Changes" l="234#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="234#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="234#3426844" />
+      <i t="Known Issues and Limitations" l="234#3426832">
+        <i t="PolicyCenter Known Issues" l="234#3432364" />
+        <i t="Studio/Platform Known Issues" l="234#3526847" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.2 Release Notes" l="235">
+      <i t="Overview" l="235#3425803" />
+      <i t="Release Information" l="235#1569125">
+        <i t="Version Number" l="235#3391015" />
+      </i>
+      <i t="Installing This Release" l="235#1556198" />
+      <i t="Support" l="235#3509755" />
+      <i t="Issues and Major Changes" l="235#3425898">
+        <i t="Upgrade Tool does not handle rules upgrade properly (PL-18021)" l="235#3453454" />
+        <i t="Archiving Not Supported" l="235#3433886" />
+        <i t="ContactManager Integration" l="235#3433991" />
+        <i t="Studio Product Model Improvements" l="235#3433993" />
+        <i t="Geocoding Using Bing and MapPoint (PL-16708)" l="235#3434671" />
+        <i t="Rate Table Maintenance Improvements" l="235#3434218" />
+        <i t="Base PCF File Changes" l="235#3463444" />
+        <i t="Base Resources Changes" l="235#3463407" />
+        <i t="Changes in This Release Provided in Upgrade Diff Report" l="235#3463393" />
+      </i>
+      <i t="Improvements and General Issues" l="235#3426844" />
+      <i t="Known Issues and Limitations" l="235#3426832">
+        <i t="PolicyCenter Known Issues" l="235#3432364" />
+        <i t="Studio/Platform Issues" l="235#3432332" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.1 Release Notes" l="236">
+      <i t="Overview" l="236#3441753" />
+      <i t="Release Information" l="236#1569125">
+        <i t="Version Number" l="236#3391015" />
+        <i t="Changes to Application Server Requirements" l="236#1556152" />
+      </i>
+      <i t="Installing This Release" l="236#1556198">
+        <i t="Upgrade Issues" l="236#3427557" />
+      </i>
+      <i t="Support" l="236#3506883" />
+      <i t="Changes in This Release" l="236#3425815">
+        <i t="Rate Table Maintenance" l="236#3493971" />
+        <i t="Base PCF File Changes" l="236#3476670" />
+        <i t="Base Resources Changes" l="236#3476678" />
+        <i t="Upgrade Diff Report" l="236#3391478" />
+      </i>
+      <i t="Improvements and General Issues" l="236#3427093">
+        <i t="PolicyCenter Improvements and General Issues" l="236#3428040" />
+        <i t="Platform Improvements and General Issues" l="236#3428008" />
+      </i>
+      <i t="Known Issues and Limitations" l="236#3427099">
+        <i t="PolicyCenter Known Issues" l="236#3331731" />
+        <i t="Studio/Platform Known Issues" l="236#3428079" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 7.0.0 Release Notes" l="237">
+      <i t="Overview" l="237#1556657" />
+      <i t="Release Information" l="237#1569125">
+        <i t="Version Number" l="237#3391015" />
+        <i t="Changes to Application Server Requirements" l="237#1556152" />
+        <i t="Support" l="237#3347198" />
+      </i>
+      <i t="Installing This Release" l="237#1556198" />
+      <i t="Changes in This Release" l="237#3373901">
+        <i t="Improvements to Upgrade Diff Report" l="237#3391478" />
+      </i>
+      <i t="Known Issues and Limitations" l="237#3243248">
+        <i t="PolicyCenter Known Issues" l="237#3331731" />
+        <i t="Platform Known Issues" l="237#3348268" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.6 Release Notes" l="238">
+      <i t="Overview" l="238#3364592" />
+      <i t="Release Information" l="238#1569125">
+        <i t="Version Number" l="238#1569127" />
+      </i>
+      <i t="Installing This Release" l="238#3364460">
+        <i t="InetSoft Evaluation" l="238#3365867" />
+      </i>
+      <i t="Support" l="238#3405102" />
+      <i t="Changes in This Release" l="238#2831124">
+        <i t="Base PCF File Changes" l="238#2831147" />
+        <i t="Custom Upgrade Diff Report" l="238#3321091" />
+      </i>
+      <i t="Improvements and General Issues" l="238#3255732" />
+      <i t="Known Issues and Limitations" l="238#3243248">
+        <i t="PolicyCenter Known Issues" l="238#3347164" />
+        <i t="Platform Known Issues" l="238#3375222" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.5 Release Notes" l="239">
+      <i t="Overview" l="239#1556657" />
+      <i t="Release Information" l="239#1569125">
+        <i t="Version Number" l="239#1569127" />
+        <i t="Support" l="239#1556152" />
+      </i>
+      <i t="Installing This Release" l="239#1556198">
+        <i t="InetSoft Evaluation" l="239#3224177" />
+      </i>
+      <i t="Changes in This Release" l="239#2831124">
+        <i t="Base PCF File Changes" l="239#2831147" />
+        <i t="Custom Upgrade Diff Report" l="239#3321091" />
+        <i t="Change in Web Service Behavior for Committing Data to the Database (PL-14984)" l="239#3329713" />
+      </i>
+      <i t="Improvements and General Issues" l="239#3255732" />
+      <i t="Known Issues and Limitations" l="239#3243248">
+        <i t="PolicyCenter Known Issues" l="239#3347164" />
+        <i t="Platform Known Issues" l="239#3256513" />
+      </i>
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.4 Release Notes" l="240">
+      <i t="Overview" l="240#1556657" />
+      <i t="Release Information" l="240#1569125">
+        <i t="Version Number" l="240#1569127" />
+        <i t="Support" l="240#1556152" />
+      </i>
+      <i t="Installing This Release" l="240#1556198">
+        <i t="InetSoft Evaluation" l="240#3224177" />
+      </i>
+      <i t="Changes in This Release" l="240#2831124">
+        <i t="Base PCF File Changes" l="240#2831147" />
+        <i t="Improvements to Upgrade Diff Report" l="240#3265196" />
+      </i>
+      <i t="Improvements and General Issues" l="240#3255732" />
+      <i t="Known Issues and Limitations" l="240#3243248" />
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.3 Release Notes" l="241">
+      <i t="Overview" l="241#1556657" />
+      <i t="Release Information" l="241#1569125">
+        <i t="Version Number" l="241#1569127" />
+        <i t="Installation Requirements" l="241#1556148" />
+        <i t="Support" l="241#1556152" />
+      </i>
+      <i t="Installing This Release" l="241#1556198">
+        <i t="InetSoft Evaluation" l="241#3224177" />
+        <i t="Issues and Major Changes" l="241#3242003" />
+      </i>
+      <i t="Changes in This Release" l="241#2831124">
+        <i t="Base PCF File Changes" l="241#2831147" />
+        <i t="Base Resources Changes" l="241#3233077" />
+      </i>
+      <i t="Improvements and General Issues" l="241#3255732" />
+      <i t="Known Issues and Limitations" l="241#3243248" />
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.2 Release Notes" l="242">
+      <i t="Overview" l="242#1556657" />
+      <i t="Release Information" l="242#1569125">
+        <i t="Version Number" l="242#1569127" />
+        <i t="Installation Requirements" l="242#1556148" />
+        <i t="Support" l="242#1556152" />
+      </i>
+      <i t="Installing This Release" l="242#1556198">
+        <i t="InetSoft Evaluation" l="242#3224177" />
+      </i>
+      <i t="Changes in This Release" l="242#2831124">
+        <i t="Base PCF File Changes" l="242#2831147" />
+        <i t="Base Resources Changes" l="242#3233077" />
+      </i>
+      <i t="Improvements and General Issues" l="242#3233099" />
+      <i t="Known Issues and Limitations" l="242#3001494" />
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.1 Release Notes" l="243">
+      <i t="Overview" l="243#1556657" />
+      <i t="Release Information" l="243#1569125">
+        <i t="Version Number" l="243#1569127" />
+        <i t="Installation Requirements" l="243#1556148" />
+        <i t="Support" l="243#1556152" />
+      </i>
+      <i t="Installing This Release" l="243#1556198">
+        <i t="Software Updates" l="243#3046256" />
+        <i t="InetSoft Evaluation" l="243#2805494" />
+        <i t="Upgrade Issues" l="243#2067662" />
+      </i>
+      <i t="Changes in This Release" l="243#2831124">
+        <i t="Base PCF File Changes" l="243#2831147" />
+        <i t="Configuration Changes" l="243#2831165" />
+      </i>
+      <i t="Improvements and General Issues" l="243#2956491" />
+      <i t="Known Issues and Limitations" l="243#3001494" />
+    </i>
+    <i t="Guidewire PolicyCenter 4.0.0 Release Notes" l="244">
+      <i t="Overview" l="244#1556657" />
+      <i t="Release Information" l="244#1569125">
+        <i t="Version Number" l="244#1569127" />
+        <i t="Installation Requirements" l="244#1556148" />
+        <i t="Support" l="244#1556152" />
+      </i>
+      <i t="Installing This Release" l="244#1556198">
+        <i t="InetSoft Evaluation" l="244#2805494" />
+        <i t="Upgrade Issues" l="244#2067662" />
+      </i>
+      <i t="Changes in This Release" l="244#2831124">
+        <i t="Base PCF File Changes" l="244#2831147" />
+        <i t="Configuration Changes" l="244#2831165" />
+      </i>
+      <i t="Known Issues and Limitations" l="244#2459612" />
+    </i>
+  </i>
+</WebWorksHelpTOC>

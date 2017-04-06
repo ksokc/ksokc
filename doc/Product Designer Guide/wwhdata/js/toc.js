@@ -1,0 +1,45 @@
+function  WWHBookData_AddTOCEntries(P)
+{
+var A=P.fN("About PolicyCenter Documentation","1");
+var B=A.fN("Conventions in This Document","1#2121726");
+B=A.fN("Support","1#2121769");
+A=P.fN("Introduction to Product Designer","2");
+B=A.fN("Introduction to the Product Model","3");
+var C=B.fN("Lines of Business in the Base Application","3#2400793");
+B=A.fN("Product Designer Overview","4");
+A=P.fN("Installing Product Designer","5");
+B=A.fN("Running Product Designer over SSL","6");
+B=A.fN("Running a Single-user Instance of Product Designer","7");
+C=B.fN("Startup Options","7#2433616");
+B=A.fN("Installing a Multi-user Instance of Product Designer","8");
+A=P.fN("Using Product Designer","9");
+B=A.fN("Starting Product Designer","10");
+C=B.fN("Starting Product Designer in a Single-user Configuration","10#1263701");
+C=B.fN("Starting Product Designer in a Multiuser Configuration","10#1263697");
+C=B.fN("Account Lockout in Product Designer","10#1393029");
+C=B.fN("Multiple Sessions in Product Designer","10#1393808");
+B=A.fN("Navigating in Product Designer","11");
+C=B.fN("Basic Navigation","11#1205038");
+C=B.fN("User Menu","12");
+C=B.fN("Options Menu","13");
+B=A.fN("User Settings","14");
+C=B.fN("User Settings Page","14#1281327");
+B=A.fN("Working with Change Lists","15");
+C=B.fN("Validating Your Changes","15#1229965");
+C=B.fN("Committing Your Changes","15#1274068");
+B=A.fN("Managing Your Change Lists","16");
+C=B.fN("My Change Lists Page","16#1281207");
+C=B.fN("Change List Home Page","17");
+A=P.fN("Product Designer Administration","18");
+B=A.fN("Managing Workspaces","19");
+C=B.fN("Workspaces Page","19#1249477");
+B=A.fN("Editing a Workspace","20");
+C=B.fN("Workspace Home Page","20#1251084");
+B=A.fN("Managing Users","21");
+C=B.fN("Users Page","21#1213395");
+B=A.fN("Editing a User","22");
+C=B.fN("User Home Page","22#1249568");
+B=A.fN("Managing Change Lists","23");
+C=B.fN("Change Lists Page","23#1249591");
+B=A.fN("Product Designer Localization","24");
+}

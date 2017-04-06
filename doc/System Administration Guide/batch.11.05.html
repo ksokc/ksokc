@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Running Batch Processes</title>
+    <link rel="StyleSheet" href="css/batch.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter System Administration Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="batch.11.01.html#2165781">Batch Processing</a> : Running Batch Processes</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2165781">Running Batch Processes</a></h3>
+      <div class="B_-_Body"><a name="2165785">You can run many batch processes, including writers for work queues, from PolicyCenter or from the command line.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2165786">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('integration', 'webservices-general.09.4.html#2719145', '');" title="Maintenance Tools Web Service" name="2165790">“Running Batch Processes Using Web Services” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('integration', 'webservices-general.09.4.html#2719145', '');" title="Maintenance Tools Web Service">Integration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2165795">Running a Batch Process from PolicyCenter</a></h4>
+      <div class="B_-_Body"><a name="2165796">You can run many batch processes, including writer batch processes for work queues, from the </a><span class="ui_-_UI_element">Batch Process Info</span> screen in PolicyCenter. The <span class="ui_-_UI_element">Batch Process Info</span> screen also contains information such as the current status of the batch process, when it last ran, when it will run again, and the schedule. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2175751">You can run writers for work queues from the </a><span class="ui_-_UI_element">Work Queue info</span> page or the <span class="ui_-_UI_element">Batch Process Info</span> page. </div>
+      <div class="B_-_Body"><a name="2165800">Users must have the </a><span class="cv_-_computer_voice">internaltools</span> permission to access the <span class="ui_-_UI_element">Batch Process Info</span> page. The Admin role has this permission by default. Alternatively, if the <span class="cv_-_computer_voice">EnableInternalDebugTools</span> parameter is set to true in <span class="cv_-_computer_voice">config.xml</span> and the server is running in development mode, all users can access to the <span class="ui_-_UI_element">Batch Process Info</span> page.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2165801">To run a batch process from the Batch Process Info page</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2165805">Log in to PolicyCenter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165806">Press </a><span class="cv_-_computer_voice">ALT+SHIFT+T</span> to display the <span class="ui_-_UI_element">Server Tools</span> tab.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165807">Click </a><span class="ui_-_UI_element">Batch Process Info</span> in the left sidebar.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165808">Click </a><span class="ui_-_UI_element">Run</span> in the <span class="ui_-_UI_element">Action</span> column of the batch process that you want to run. The <span class="ui_-_UI_element">Run</span> button is enabled for all batch process types that belong to the <span class="cv_-_computer_voice">BatchProcessTypeUsage</span> category <span class="cv_-_computer_voice">UIRunnable</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2165809">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.03.html#1472901', '');" title="Batch Process Info" name="2165813">Batch Process Info</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'mngservers.07.03.html#1687539', '');" title="Server Modes and Run Levels" name="2165817">Server Modes and Run Levels</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2174848">Running a Writer from PolicyCenter</a></h4>
+      <div class="B_-_Body"><a name="2174917">You can run the writer for a batch process from either the </a><span class="ui_-_UI_element">Batch Process Info</span> screen or the <span class="ui_-_UI_element">Work Queue Info</span> screen. From the <span class="ui_-_UI_element">Work Queue Info</span> screen, you run the writer and then see the progress of workers processing the items in the batch. The process history that you download from the <span class="ui_-_UI_element">Work Queue Info</span> screen includes history for the run of the writer, including its duration and starting and ending times. </div>
+      <div class="B_-_Body"><a name="2175068">Users must have the </a><span class="cv_-_computer_voice">internaltools</span> permission to access the <span class="ui_-_UI_element">Work Queue Info</span> page. The Admin role has this permission by default. Alternatively, if the <span class="cv_-_computer_voice">EnableInternalDebugTools</span> parameter is set to true in <span class="cv_-_computer_voice">config.xml</span> and the server is running in development mode, all users can access to the <span class="ui_-_UI_element">Work Queue Info</span> page.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2175509">To run the writer for a work queue from the Work Queue Info page</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2175513">Log in to PolicyCenter.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2175514">Press </a><span class="cv_-_computer_voice">ALT+SHIFT+T</span> to display the <span class="ui_-_UI_element">Server Tools</span> tab.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2175515">Click </a><span class="ui_-_UI_element">Work Queue Info</span> in the left sidebar.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2175516">Click </a><span class="ui_-_UI_element">Run Writer </span>in the <span class="ui_-_UI_element">Action</span> column of the work queue. The <span class="ui_-_UI_element">Run Writer</span> button is enabled for all work queue types that belong to the <span class="cv_-_computer_voice">BatchProcessTypeUsage</span> category <span class="cv_-_computer_voice">UIRunnable</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2175517">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.04.html#1472917', '');" title="Work Queue Info" name="2175521">Work Queue Info</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'mngservers.07.03.html#1687539', '');" title="Server Modes and Run Levels" name="2175064">Server Modes and Run Levels</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2165819">Running a Batch Process from the Command Line</a></h4>
+      <div class="B_-_Body"><a name="2165820">You can run many batch processes, including writers for work queues, by running the </a><span class="cv_-_computer_voice">maintenance_tools</span> <span class="cv_-_computer_voice">-startprocess</span> command from the command line.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2165821">To run a batch process from the command line</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2165825">Start the PolicyCenter server if it is not already running.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165826">Open a command window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165830">Navigate to </a><span class="cv_-_computer_voice">PolicyCenter/admin/bin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165831">Run the following command:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2165832">maintenance_tools -password </a><span class="pc_-_parameter_in_code">password</span> -startprocess <span class="pc_-_parameter_in_code">process</span></div>
+      <div class="LP_-_List_Para"><a name="2165833">For the </a><span class="pc_-_parameter_in_code">process</span> value, specify a valid process code. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2165834">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2165837">For a list of process codes for batch processes, including writers for work queues, see </a><a href="javascript:WWHClickedPopup('admin', 'batch.11.10.html#2166473', '');" title="List of Work Queues and Batch Processes">List of Work Queues and Batch Processes</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2165839">Terminating a Batch Process from the Command Line</a></h4>
+      <div class="B_-_Body"><a name="2165840">You can terminate in-progress processes, including writers for work queues, by using the </a><span class="cv_-_computer_voice">maintenance_tools -terminateprocess</span> command. However, <span class="e_-_emphasis">single phase</span> batch processing cannot be terminated. Single phase processes run in a single transaction, so there is no convenient place to terminate the process. </div>
+      <div class="B_-_Body"><a name="2165841">The following processes are single phase processes that cannot be terminated:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2165844">DataDistribution</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2165849">To terminate a batch process from the command line</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2165850">Open a command window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165854">Navigate to </a><span class="cv_-_computer_voice">PolicyCenter/admin/bin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165855">Run the following command:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2165856">maintenance_tools -password </a><span class="pc_-_parameter_in_code">password</span> -terminateprocess <span class="pc_-_parameter_in_code">process</span></div>
+      <div class="LP_-_List_Para"><a name="2165857">For the </a><span class="pc_-_parameter_in_code">process</span> value, specify a valid process code or a process ID. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2174500">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2174503">For a list of batch process codes, including writers for work queues, see </a><a href="javascript:WWHClickedPopup('admin', 'batch.11.10.html#2166473', '');" title="List of Work Queues and Batch Processes">List of Work Queues and Batch Processes</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2165863">Checking Status of a Batch Process from the Command Line</a></h4>
+      <div class="B_-_Body"><a name="2165864">You can check the status of processes, including writer processes for work queues, by using the </a><span class="cv_-_computer_voice">maintenance_tools</span> <span class="cv_-_computer_voice">-processstatus</span> command. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2165865">To check the status of a batch process from the command line</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2165866">Open a command window.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165870">Navigate to </a><span class="cv_-_computer_voice">PolicyCenter/admin/bin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2165871">Run the following command:</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="CS_-_Code_Single_Line"><a name="2165872">maintenance_tools -password </a><span class="pc_-_parameter_in_code">password</span> -processstatus <span class="pc_-_parameter_in_code">process</span></div>
+      <div class="LP_-_List_Para"><a name="2165873">For the </a><span class="pc_-_parameter_in_code">process</span> value, specify a valid process code or a process ID. </div>
+      <div class="B_-_Body"><a name="2165874">For work queues, this command returns the status of the writer process. It does not check whether there are remaining work items. It is possible for the process status to report as completed because the writer has completed adding items to the work queue, yet there are remaining unprocessed work items.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2165875">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2165878">For a list of batch process codes, including work queue writer processes, see </a><a href="javascript:WWHClickedPopup('admin', 'batch.11.10.html#2166473', '');" title="List of Work Queues and Batch Processes">List of Work Queues and Batch Processes</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

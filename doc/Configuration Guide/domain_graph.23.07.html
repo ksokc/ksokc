@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Defining Ownership Relations Between Objects</title>
+    <link rel="StyleSheet" href="css/domain_graph.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter Configuration Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="p-datamodel_2.html#2291121">Data Model Configuration</a> : <a class="WebWorks_Breadcrumb_Link" href="domain_graph.23.01.html#2291121">The Archiving Domain Graph</a> : <a class="WebWorks_Breadcrumb_Link" href="domain_graph.23.05.html#2291121">Including Objects in the Domain Graph</a> : Defining Ownership Relations Between Objects</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h4 class="H2B_-_Heading_2_Break"><a name="2291121">Defining Ownership Relations Between Objects</a></h4>
+      <div class="B_-_Body"><a name="2288526">Any new entity type that you define and want to add to the domain graph must correctly define a foreign key to an entity type in the graph. This foreign key defines which object </a><span class="e_-_emphasis">owns</span> the other. There are several different types of ownership or ways to implement foreign keys between objects:</div>
+      <div class="T_-_Table"><a name="2288560">&nbsp;</a></div>
+      <table class="withHeading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2288571">Ownership</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="2288573">Description</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2288575">Object ownership</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2288577">A child object (B) has a foreign key to its parent object (A). In general, a foreign key to object A from object B means that A owns B. The direction of a solid arrow between two objects in the following illustration of the graph points to the owner.</a></div>
+            <div class="TT_-_Table_Text"><a name="2351157">In PolicyCenter, the foreign key is defined through the effective dated branch as described in </a><a href="javascript:WWHClickedPopup('config', 'domain_graph.23.03.html#2497818', '');" title="Object Ownership in the Domain Graph">“Ownership Through the Effective Dated Branch”</a>.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2288579">Inverse ownership</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 4pt; padding-left: 2pt; padding-right: 8pt; padding-top: 0pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="2288581">A parent object (A) has a foreign key to a child object (B). Thus, the direction of the foreign key for ownership is the inverse of typical object ownership. For inverse ownership, set the </a><span class="cv_-_computer_voice">owner</span> attribute on the foreign key defined on object A to <span class="cvt_-_computer_voice_table">true</span>. The direction of a dashed arrow between two objects in the following illustration of the graph points to the owner. </div>
+            <div class="TT_-_Table_Text"><span class="s_-_strong"><a name="2328462">IMPORTANT</a></span> Guidewire discourages the use of inverse ownership relationships. The PolicyCenter data model supports inverse ownership relationships for the rare case in which upgrading the database is unduly cumbersome or time consuming. As a general rule, do not use this type of relationship.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="2497994"> </a><span style="color: #ff00ff; font-weight: bold">. </span>The following illustration, which shows portions of the entities in the PolicyCenter data model, shows the relationships between entities and foreign keys. The illustration contains entities in the domain graph and in reference data, and the <span class="cv_-_computer_voice">Note</span> and <span class="cv_-_computer_voice">Document</span> entities, which are overlap tables. </div>
+      <div class="B_-_Body"><a name="2497995">The </a><span class="cv_-_computer_voice">PolicyPeriod</span> entity implements the <span class="cv_-_computer_voice">RootInfo</span> delegate. The <span class="cv_-_computer_voice">PolicyPeriod</span> and <span class="cv_-_computer_voice">EffectiveDatedFields</span> entities implement the <span class="cv_-_computer_voice">Extractable</span> delegate through inheritance. However, PolicyCenter does not remove the <span class="cv_-_computer_voice">PolicyPeriod</span> and <span class="cv_-_computer_voice">EffectiveDatedFields</span> entities from the database during archiving. </div>
+      <div class="B_-_Body"><a name="2497996">During archiving, PolicyCenter removes the entities in the revision graph from the database. PolicyCenter removes entities in the overlap tables if they apply to the policy period.</a></div>
+      <div class="F_-_Figure"><a name="2346917"><img class="Default" src="images/domain_graph.23.07.1.png" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="BKN_-_Body_002c_Keep_Next"><a name="2346914">In the PolicyCenter data model:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498005">The </a><span class="cv_-_computer_voice">PolicyPeriod</span> object—and only that object—implements the <span class="cv_-_computer_voice">RootInfo</span> delegate. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498006">The </a><span class="cv_-_computer_voice">EffectiveDatedFields</span> object is part of the revision graph and the domain graph. It is retained when archiving occurs.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2291010">All objects in the domain graph implement the </a><span class="cv_-_computer_voice">Extractable</span> delegate.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2498011">The </a><span class="cv_-_computer_voice">Note</span> object implements a number of delegates, including the <span class="cv_-_computer_voice">Extractable</span> delegate. Objects that implement the <span class="cv_-_computer_voice">OverlapTable</span> delegate can exist in the domain graph and as reference data. However, individual rows in the table can exist only in one table or the other.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

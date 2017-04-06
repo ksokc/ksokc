@@ -1,0 +1,1852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Customizing the Upgrade</title>
+    <link rel="StyleSheet" href="css/procedure-db-d.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter Upgrade Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="p-upgrade-d.html#1928342">Upgrading from 7.0.x</a> : <a class="WebWorks_Breadcrumb_Link" href="procedure-db-d.12.01.html#1928342">Upgrading the PolicyCenter 7.0.x Database</a> : Customizing the Upgrade</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="1928342">Customizing the Upgrade</a></h3>
+      <div class="B_-_Body"><a name="1928343">The </a><span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin interface provides hooks for custom code that you want to run during the database upgrade. You can use the <span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin to:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928344">execute custom version checks to test data or the data model itself before starting the upgrade.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928345">make custom database changes before or after the database upgrade.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928346">make data model changes to archived entities.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928347">For example, you might fix a consistency check failure issue, correct issues reported by version checks, or delete a custom extension that you are no longer using.</a></div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="1928351">PolicyCenter </a>4.0 included a similar plugin interface, <span class="cv_-_computer_voice">IDatabaseUpgrade</span>. If you previously implemented <span class="cv_-_computer_voice">IDatabaseUpgrade</span> for an upgrade to PolicyCenter 4.0, you must now implement <span class="cv_-_computer_voice">IDatamodelUpgrade</span> if you want to execute custom upgrade code.</div>
+      <h4 class="H2_-_Heading_2"><a name="1928356">Running Custom Version Checks and Triggers</a></h4>
+      <div class="B_-_Body"><a name="1928357">You can use the </a><span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin to run custom version checks and triggers before and after the database upgrade. The <span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin interface contains method signatures for two methods that you must define in your plugin. These signatures are:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt; margin-bottom: 2.0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cv_-_computer_voice"><a name="1928358">property getBeforeUpgradeDatamodelChanges() : List&lt;IDataModelChange&lt;BeforeUpgradeVersionTrigger&gt;&gt;</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt; margin-bottom: 2.0pt; vertical-align: baseline">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap; color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner" style="color: #000000; font-style: normal; font-variant: normal; font-weight: normal; text-transform: none"><span class="cv_-_computer_voice"><a name="1928359">property getAfterUpgradeDatamodelChanges() : List&lt;IDataModelChange&lt;AfterUpgradeVersionTrigger&gt;&gt;</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928361">Each method returns a list of </a><span class="cv_-_computer_voice">IDataModelChange</span> entities, each taking a <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> or <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> type parameter. The <span class="cv_-_computer_voice">IDataModelChange</span> interface has two methods that you use to make data model changes. The <span class="cv_-_computer_voice">getDatabaseUpgradeVersionTrigger</span> method is for changes to the database. The <span class="cv_-_computer_voice">getArchivedDocumentUpgradeVersionTrigger</span> method is for changes to archived entities. If your organization has not implemented archiving or you do not want to make changes to archived entities, return null for <span class="cv_-_computer_voice">getArchivedDocumentUpgradeVersionTrigger</span>.</div>
+      <div class="B_-_Body"><a name="1928362">The </a><span class="cv_-_computer_voice">getAfterUpgradeDatamodelChanges</span> method runs after the Guidewire upgrade version triggers. You can use this method to move data into extension tables or columns that did not exist prior to upgrading.</div>
+      <div class="B_-_Body"><a name="1928363">You can return an empty list from either </a><span class="cv_-_computer_voice">getBeforeUpgradeDatamodelChanges</span> or <span class="cv_-_computer_voice">getAfterUpgradeDatamodelChanges</span>. For example, if you only have triggers to run before the upgrade, you can return an empty list from <span class="cv_-_computer_voice">getAfterUpgradeDatamodelChanges</span>.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928364">Modifying Tables</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928365">Both </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> and <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> base classes provide a protected <span class="cv_-_computer_voice">getTable</span> method that accepts a <span class="cv_-_computer_voice">string</span> parameter. The <span class="cv_-_computer_voice">getTable</span> method returns an <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> or <span class="cv_-_computer_voice">IAfterUpgradeTable</span> object that provides a number of methods for DDL and DML operations, such as:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928366">create</a></span> – Create the table if it does not already exist. The table must be related to an entity defined in the data model. This method is available only for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928367">delete</a></span> - Deletes rows from a table. Returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeDeleteBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IDeleteBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable)</span> that has methods for comparing data to restrict which rows are deleted.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928368">drop</a></span> - Drops the table.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928369">dropColumns</a></span> - Drops multiple columns from the table.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928370">getColumn</a></span> – Returns an <span class="cv_-_computer_voice">IBeforeUpgradeColumn</span> or <span class="cv_-_computer_voice">IAfterUpgradeColumn</span> object that has methods to perform DDL operations on the column such as create, drop, rename, and more.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928371">insert</a></span> – Returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeInsertBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IInsertBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable)</span> to perform an insert operation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928372">insertSelect</a></span> – Returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeInsertSelectBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IInsertSelectBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable)</span> for SQL to perform an insert operation using data selected from a table.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928373">rename</a></span> - Renames the table.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928374">update</a></span> – Returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeUpdateBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IUpdateBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable)</span> for SQL to perform an update operation.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928375">For DML operations, call the </a><span class="cv_-_computer_voice">execute</span> method on the builder to actually perform the operation. The <span class="cv_-_computer_voice">execute</span> method runs in its own transaction. You do not need to handle transactions and <span class="cv_-_computer_voice">TransactionManager</span>.</div>
+      <div class="B_-_Body"><a name="1928376">There are more methods on the </a><span class="cv_-_computer_voice">IBeforeUpgradeTable</span> and <span class="cv_-_computer_voice">IAfterUpgradeTable</span> classes documented in the Guidewire Gosu API documentation. To generate the Guidewire Gosu API documentation, run the <span class="cv_-_computer_voice">gwpc regen-gosudoc</span> command from the PolicyCenter <span class="cv_-_computer_voice">bin</span> directory. Then, open <span class="cv_-_computer_voice">PolicyCenter/build/gosudoc/index.html</span>.</div>
+      <div class="B_-_Body"><a name="1928386">The methods for </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> intentionally take strings but not entities or properties. This is because the name of the column could change in the future. Consider <span class="cv_-_computer_voice">PropertyA</span> on <span class="cv_-_computer_voice">EntityE</span> which corresponds to column <span class="cv_-_computer_voice">A</span> in the database. Suppose you use <span class="cv_-_computer_voice">PROPERTYA_PROP</span> in a version trigger at minor version 200, but at minor version 250, you decide to rename the backing column from <span class="cv_-_computer_voice">A</span> to <span class="cv_-_computer_voice">B</span>. The version trigger you wrote in the past would break because it would execute before the rename operation and would try to use the new column name.</div>
+      <div class="B_-_Body"><span class="cv_-_computer_voice"><a name="1928387">AfterUpgradeVersionTrigger</a></span> is very similar to <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span>. A few differences include:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928388">The </a><span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> DML builders use the query builder, <span class="cv_-_computer_voice">IQueryBuilder</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928389">In an </a><span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> you can use properties and types in addition to strings.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928390">Some DDL operations are not provided on the </a><span class="cv_-_computer_voice">IAfterUpgradeTable</span> object, including creating a table or adding a column.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928391">Unless you require one of the unique capabilities of </a><span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span>, use <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> for custom version triggers.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928392">Upgrading Typelists</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928393">The </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> class includes a <span class="cv_-_computer_voice">getTypeKeyID</span> method with the following signature:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1928394">protected final Integer getTypeKeyID(IEntityType subtype)</a></div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="1928395">Protected methods do not appear in the Gosu documentation. Use </a><span class="cv_-_computer_voice">CTRL</span> + <span class="cv_-_computer_voice">SPACE</span> in Studio to show available methods and properties.</div>
+      <div class="B_-_Body"><a name="1928396">The </a><span class="cv_-_computer_voice">getTypeKeyID</span> method returns the integer ID of the type code in the type list matching the given table name. This method checks both the existing typelist tables and the metadata files to determine what all typekey IDs will be after upgrade. Therefore, the <span class="cv_-_computer_voice">getTypeKeyID</span> method works as expected even before a new typekey or typelist table is created during the automatic schema upgrade phase. </div>
+      <div class="B_-_Body"><a name="1928397">This method also works for orphaned typecodes that have not yet been removed from the database. These are typecodes that still exist in the database table but not in the metadata file. You can use the </a><span class="cv_-_computer_voice">getTypeKeyID</span> method for remapping usages of orphaned typecodes.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928398">Version Checks</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928399">In some cases, you might want to check for a certain condition in the database before the upgrade proceeds. This is referred to as a version check. Only read operations are available in version checks. For example, you can write a version check to query a table or check the existence of a table or column, but the check cannot insert new rows. The </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> class includes a <span class="cv_-_computer_voice">hasVersionCheck</span> method that you must define to return true or false. If the trigger does include a version check, overwrite the <span class="cv_-_computer_voice">createVersionCheck</span> method to define your custom version check. For standalone version checks that are not associated with a version trigger, you can use <span class="cv_-_computer_voice">BeforeUpgradeVersionCheckWrapper</span>. </div>
+      <div class="B_-_Body"><a name="1928400">The upgrade executes all custom version checks before custom version triggers. The upgrade runs Guidewire version checks after all custom </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> implementations, so you can create a <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> to correct issues detected by the Guidewire version checks.</div>
+      <div class="B_-_Body"><a name="1928401">If a custom version check fails, the upgrade stops before running any upgrade triggers. Correct the issue and restart the upgrade.</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928402">Order of Execution</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928403">The upgrade performs actions in the following order:</a></div>
+      <div class="T_-_Table"><a name="1928455">&nbsp;</a></div>
+      <table class="Shading" style="text-align: left" border="0" cellpadding="10" cellspacing="0" summary="">
+        <caption></caption>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1928406">Step</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1928408">Action</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: bottom">
+            <div class="TH_-_Table_Heading"><a name="1928410">In the event of failure due to a data issue...</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928412">1</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928414">Custom version checks</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #000000; border-top-style: solid; border-top-width: 0.5pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928416">Correct the data issue. Restart the upgrade. You do not need to restore the database because the upgrade has not made any changes.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928418">2</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928420">Custom </a><span class="cvt_-_computer_voice_table">BeforeUpgradeVersionTrigger</span> implementations</div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928422">Restore the database from a backup. Correct the data issue. Consider adding custom version checks to test for other instances of the data issue.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928424">3</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928426">Guidewire version checks</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928428">If you do not have any custom </a><span class="cvt_-_computer_voice_table">BeforeUpgradeVersionTrigger</span> implementations, correct the data issue and restart the upgrade. </div>
+            <div class="TT_-_Table_Text"><a name="1928429">If you do have custom </a><span class="cvt_-_computer_voice_table">BeforeUpgradeVersionTrigger</span> implementations, restore the database from a backup. Then, correct the data issue.</div>
+            <div class="TT_-_Table_Text"><a name="1928430">In either case, consider creating a custom </a><span class="cvt_-_computer_voice_table">BeforeUpgradeVersionTrigger</span> implementation to correct the data issue.</div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928432">4</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928434">Guidewire version triggers</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928436">A failure due to data issues at this stage is unlikely. Contact Guidewire Support.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928438">5</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928440">Automated data model upgrade to update the database to the defined data model.</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928442">A failure due to data issues at this stage is unlikely. Contact Guidewire Support.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928444">6</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928446">Guidewire version triggers that require the updated data model in the database</a></div>
+          </td>
+          <td style="border-bottom-color: #c0d1d1; border-bottom-style: solid; border-bottom-width: 0.15pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928448">A failure due to data issues at this stage is unlikely. Contact Guidewire Support.</a></div>
+          </td>
+        </tr>
+        <tr>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928450">7</a></div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928452">Custom </a><span class="cvt_-_computer_voice_table">AfterUpgradeVersionTrigger</span> implementations</div>
+          </td>
+          <td style="border-bottom-color: #000000; border-bottom-style: solid; border-bottom-width: 0.5pt; border-top-color: #c0d1d1; border-top-style: solid; border-top-width: 0.15pt; padding-bottom: 2pt; padding-left: 2pt; padding-right: 8pt; padding-top: 2pt; vertical-align: top">
+            <div class="TT_-_Table_Text"><a name="1928454">Restore the database from a backup. Correct the data issue. Consider creating a custom </a><span class="cvt_-_computer_voice_table">BeforeUpgradeVersionTrigger</span> implementation to correct the data issue if possible.</div>
+          </td>
+        </tr>
+      </table>
+      <div class="B_-_Body"><a name="1928456">The preceding table describes failure cases that are caused by data issues. If the upgrade fails for other reasons, such as a disruption of the database server, fix the issue causing the disruption, restore the database, and restart the upgrade.</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928457">Versioning</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928458">Each </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> and <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> instance requires a minor version number, passed as an integer. If the data model version number is less than or equal to the number passed to the instance, then the trigger executes. Whenever you make a data model change, or you want to force an upgrade, increment the version number in <span class="cv_-_computer_voice">extensions.properties</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="1928459">To run custom version checks and triggers</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="1928460">Create a new package, such as </a><span class="ps_-_parameter_in_code_snippets">companyName</span><span class="cv_-_computer_voice">.upgrade</span>, to store your custom version triggers.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LS2A_-_List_Start_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS2A_-_List_Start_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">a.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS2A_-_List_Start_002c_Level_2_Alpha_inner"><a name="1928461">Open Studio.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">b.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928462">In the Studio </a><span class="uis_-_UI_element_Studio">Project</span> window, expand <span class="uis_-_UI_element_Studio">configuration</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">c.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928466">Right-click </a><span class="uis_-_UI_element_Studio">gsrc</span> and click <span class="uis_-_UI_element_Studio">New</span> → <span class="uis_-_UI_element_Studio">Package</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">d.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928467">Enter a package name for upgrade purposes, such as </a><span class="ps_-_parameter_in_code_snippets">companyName</span><span class="cv_-_computer_voice">.upgrade</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1928471">Right-click the upgrade package and click </a><span class="uis_-_UI_element_Studio">New</span> → <span class="uis_-_UI_element_Studio">Gosu Class</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1928472">Enter a name for the class and click </a><span class="uis_-_UI_element_Studio">OK</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1928473">Create a new Gosu class that extends </a><span class="cv_-_computer_voice">CustomerDatamodelUpgrade</span> and implements <span class="cv_-_computer_voice">IDatamodelUpgrade</span>. The class you create must define the <span class="cv_-_computer_voice">getBeforeUpgradeDatamodelChanges</span> and <span class="cv_-_computer_voice">getAfterUpgradeDatamodelChanges</span> methods. This class is the container from which you call custom version trigger classes.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1928474">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928475">package </a><span class="pc_-_parameter_in_code">companyName</span>.upgrade</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928476">uses gw.plugin.upgrade.IDatamodelUpgrade</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928477">uses java.lang.Iterable</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928478">uses gw.api.database.upgrade.before.BeforeUpgradeVersionTrigger</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928479">uses gw.api.database.upgrade.after.AfterUpgradeVersionTrigger</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928480">uses java.util.ArrayList</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928481">uses gw.api.datamodel.upgrade.CustomerDatamodelUpgrade</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928482">uses gw.api.datamodel.upgrade.IDatamodelChange</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928483">uses gw.api.database.upgrade.DatamodelChangeWithoutArchivedDocumentChange</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928484">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928485">class TestDatamodelUpgradeImpl extends CustomerDatamodelUpgrade implements IDatamodelUpgrade {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928486">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928487">&nbsp;&nbsp;override property get BeforeUpgradeDatamodelChanges() :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928488">&nbsp;&nbsp;List&lt;IDatamodelChange&lt;BeforeUpgradeVersionTrigger&gt;&gt; {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928489">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928490">&nbsp;&nbsp;&nbsp;&nbsp;var list = new ArrayList&lt;IDatamodelChange&lt;BeforeUpgradeVersionTrigger&gt;&gt;()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928491">&nbsp;&nbsp;&nbsp;&nbsp;list.add(DatamodelChangeWithoutArchivedDocumentChange.make(new </a><span class="pc_-_parameter_in_code">BeforeVersionTrigger1</span>()))</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928492">&nbsp;&nbsp;&nbsp;&nbsp;list.add(DatamodelChangeWithoutArchivedDocumentChange.make(new </a><span class="pc_-_parameter_in_code">BeforeVersionTrigger2</span>()))</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928493">&nbsp;&nbsp;&nbsp;&nbsp;return list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928494">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928495">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928496">&nbsp;&nbsp;override property get AfterUpgradeDatamodelChanges() :</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928497">&nbsp;&nbsp;List&lt;IDatamodelChange&lt;AfterUpgradeVersionTrigger&gt;&gt; {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928498">&nbsp;&nbsp;&nbsp;&nbsp;var list = new ArrayList&lt;IDatamodelChange&lt;AfterUpgradeVersionTrigger&gt;&gt;()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928499">&nbsp;&nbsp;&nbsp;&nbsp;list.add(DatamodelChangeWithoutArchivedDocumentChange.make(new </a><span class="pc_-_parameter_in_code">AfterVersionTrigger1</span>()))</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928500">&nbsp;&nbsp;&nbsp;&nbsp;return list</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928501">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928502">} </a></PRE>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	5.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1928503">Create your custom </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> and <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> Gosu classes. See <a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928541', '');" title="Customizing the Upgrade">“IDatamodelUpgrade API Examples”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	6.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="1928507">Implement the </a><span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin with the new class.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LS2A_-_List_Start_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS2A_-_List_Start_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">a.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS2A_-_List_Start_002c_Level_2_Alpha_inner"><a name="1928517">Start Guidewire Studio 8.0.3 by entering </a><span class="cv_-_computer_voice">gwpc studio</span> from the <span class="cv_-_computer_voice">PolicyCenter/bin</span> directory.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">b.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928524">In Studio, expand </a><span class="uis_-_UI_element_Studio">configuration</span> → <span class="uis_-_UI_element_Studio">config</span> → <span class="uis_-_UI_element_Studio">Plugins</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">c.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928528">Right-click </a><span class="uis_-_UI_element_Studio">registry</span> and click <span class="uis_-_UI_element_Studio">New</span> → <span class="uis_-_UI_element_Studio">Plugin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">d.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928529">In the </a><span class="uis_-_UI_element_Studio">Plugin</span> dialog, enter a name, such as <span class="cv_-_computer_voice">DatamodelUpgradePlugin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">e.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928530">In the </a><span class="uis_-_UI_element_Studio">Plugin</span> dialog, click the <span class="uis_-_UI_element_Studio">...</span> button.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">f.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928531">In the </a><span class="uis_-_UI_element_Studio">Select Plugin Class</span> dialog, type <span class="cv_-_computer_voice">IDatamodelUpgrade</span> and select the <span class="uis_-_UI_element_Studio">IDatamodelUpgrade</span> interface.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">g.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928535">In the </a><span class="uis_-_UI_element_Studio">Plugin</span> dialog, click OK. Studio creates a GWP file under <span class="uis_-_UI_element_Studio">Plugins</span> → <span class="uis_-_UI_element_Studio">registry</span> with the name you entered.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">h.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928536">Click the </a><span class="uis_-_UI_element_Studio">Add Plugin</span> icon (a plus sign) and select <span class="uis_-_UI_element_Studio">Add Gosu Plugin</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">i.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928537">For </a><span class="uis_-_UI_element_Studio">Gosu Class</span>, enter your class, including the package.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI2A_-_List_Item_002c_Level_2_Alpha_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">j.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI2A_-_List_Item_002c_Level_2_Alpha_inner"><a name="1928538">Save your changes.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="1928539">When you start the server to perform the database upgrade from a prior major version, the upgrade calls the plugin and runs your custom methods.</a></div>
+      <h4 class="H2_-_Heading_2"><span class="cvh_-_computer_voice_in_heading"><a name="1928541">IDatamodelUpgrade</a></span> API Examples</h4>
+      <div class="B_-_Body"><a name="1928542">This topic first introduces the basic structure of a </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> and <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span>. Next it shows methods that can be included within the <span class="cv_-_computer_voice">execute</span> method of these triggers to modify the database.</div>
+      <div class="B_-_Body"><a name="1928543">This topic includes:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928601', '');" title="Customizing the Upgrade" name="1928547">BeforeUpgradeVersionTrigger Structure</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928645', '');" title="Customizing the Upgrade" name="1928551">AfterUpgradeVersionTrigger Structure</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928667', '');" title="Customizing the Upgrade" name="1928555">Altering Columns to Match Data Model</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928686', '');" title="Customizing the Upgrade" name="1928559">Altering a Non-nullable Column to Nullable</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928693', '');" title="Customizing the Upgrade" name="1928563">Creating Columns</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928747', '');" title="Customizing the Upgrade" name="1928567">Dropping Columns</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928759', '');" title="Customizing the Upgrade" name="1928571">Renaming Columns</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928765', '');" title="Customizing the Upgrade" name="1928575">Setting a Column Value for a Specific Subtype</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928778', '');" title="Customizing the Upgrade" name="1928579">Creating Tables</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928794', '');" title="Customizing the Upgrade" name="1928583">Renaming Tables</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928800', '');" title="Customizing the Upgrade" name="1928587">Deleting Rows</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928811', '');" title="Customizing the Upgrade" name="1928591">Inserting Rows</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928834', '');" title="Customizing the Upgrade" name="1928595">Inserting Data Selected from Another Table</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.15.html#1928866', '');" title="Customizing the Upgrade" name="1928599">Updating Rows</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><span class="cvh_-_computer_voice_in_heading"><a name="1928601">BeforeUpgradeVersionTrigger</a></span> Structure</h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928602">A custom </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> subclass has the following structure. </div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928603">package </a><span class="pc_-_parameter_in_code">companyName</span>.upgrade.before</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928604">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928605">uses gw.api.database.upgrade.before.BeforeUpgradeVersionCheck</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928606">uses gw.api.database.upgrade.before.BeforeUpgradeVersionTrigger</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928607">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928608">class myBeforeUpgradeTrigger extends BeforeUpgradeVersionTrigger {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928609">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928610">  construct() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928611">    super(</a><span class="pc_-_parameter_in_code">dataModelVersionNumber</span>)</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928612">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928613">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928614">&nbsp;&nbsp;override function execute() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928615">&nbsp;&nbsp;&nbsp;&nbsp;// Perform actions here.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928616">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928617">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928618">&nbsp;&nbsp;override function hasVersionCheck() : boolean {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928619">&nbsp;&nbsp;&nbsp;&nbsp;// return true if creating a version check to determine whether the trigger can run.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928620">&nbsp;&nbsp;&nbsp;&nbsp;// return false if you are not implementing a version check.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928621">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928622">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928623">&nbsp;&nbsp;override property get Description() : String {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928624">&nbsp;&nbsp;&nbsp;&nbsp;return "</a><span class="pc_-_parameter_in_code">Description of the version trigger.</span>"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928625">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928626">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928627">&nbsp;&nbsp;// Override the createVersionCheck method if you are implementing a version check.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928628">&nbsp;&nbsp;override function createVersionCheck() : BeforeUpgradeVersionCheck {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928629">&nbsp;&nbsp;&nbsp;&nbsp;return new BeforeUpgradeVersionCheck(</a><span class="pc_-_parameter_in_code">dataModelVersionNumber</span>) {</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928630">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928631">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;override function verifyUpgradability() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928632">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (</a><span class="pc_-_parameter_in_code">condition to detect</span>) {</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928633">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addVersionCheckProblem("</a><span class="pc_-_parameter_in_code">description of issue</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928634">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928635">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928636">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928637">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;override property get Description() : String {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928638">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return "</a><span class="pc_-_parameter_in_code">Description of the version check.</span>"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928639">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928640">&nbsp;&nbsp;&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928641">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928642">}</a></PRE>
+      <div class="B_-_Body"><a name="1928643">Define the execute method to perform the actions you want your custom trigger to perform. Some examples are provided in subsequent topics.</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><span class="cvh_-_computer_voice_in_heading"><a name="1928645">AfterUpgradeVersionTrigger</a></span> Structure</h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928646">A custom </a><span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> subclass has the following structure.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928647">package </a><span class="pc_-_parameter_in_code">companyName</span>.upgrade.after</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928648">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928649">uses gw.api.database.upgrade.after.AfterUpgradeVersionTrigger</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928650">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928651">class myAfterUpgradeTrigger extends AfterUpgradeVersionTrigger{</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928652">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928653">  construct() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928654">    super(</a><span class="pc_-_parameter_in_code">dataModelVersionNumber</span>)</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928655">  }</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928656">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928657">&nbsp;&nbsp;override function execute() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928658">&nbsp;&nbsp;&nbsp;&nbsp;// Perform actions here.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928659">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928660">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928661">&nbsp;&nbsp;override property get Description() : String {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928662">&nbsp;&nbsp;&nbsp;&nbsp;return "</a><span class="pc_-_parameter_in_code">Description of the version trigger.</span>"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928663">&nbsp;&nbsp;}</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928664">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928665">}</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928667">Altering Columns to Match Data Model</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928668">In most cases, you do not need to alter a column to match a change to the column type in the logical data model. The upgrader automatically applies data model changes to the database. However, this occurs after all custom </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> instances have run, so Guidewire provides methods to alter database columns to match the data model. </div>
+      <h6 class="HS_-_Head_Sub"><a name="1928669">Altering a single column</a></h6>
+      <div class="B_-_Body"><a name="1928670">If you need to alter a single column for use in a </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span>, modify the data model file, then use the <span class="cv_-_computer_voice">alterColumnTypeToMatchDatamodel</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeColumn</span>.</div>
+      <div class="B_-_Body"><a name="1928671">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928672">var table = getTable("TableName")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928673">var column = table.getColumn("ColumnName")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928674">column.alterColumnTypeToMatchDatamodel()</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1928675">Altering multiple column</a></h6>
+      <div class="B_-_Body"><a name="1928676">To alter multiple columns for use in a </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span>, modify the data model file, then use the <span class="cv_-_computer_voice">alterMultipleColumnsToMatchDatamodel</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>.</div>
+      <div class="B_-_Body"><a name="1928677">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928678">var table = getTable("TableName")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928679">var columnsToChange = new IBeforeUpgradeColumn[2]</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928680">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928681">columnsToChange[0] = table.getColumn("column1")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928682">columnsToChange[1] = table.getColumn("column1")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928683">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928684">table.alterMultipleColumnsToMatchDatamodel(columnsToChange)</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928686">Altering a Non-nullable Column to Nullable</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928687">To alter a column from non-nullable to nullable, use the </a><span class="cv_-_computer_voice">IBeforeUpgradeColumn</span> method <span class="cv_-_computer_voice">alterColumnToNullable</span>.</div>
+      <div class="B_-_Body"><a name="1928688">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928689">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>");</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928690"> </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928691">table.getColumn("</a><span class="pc_-_parameter_in_code">ColumnName</span>").alterColumnToNullable();</PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928693">Creating Columns</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928694">The database upgrader automatically creates a column that is added to the data model if the column meets one of the following criteria:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928695">Nullable</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928696">Non-nullable with a default value specified in the metadata</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928697">Non-nullable without a default value if there are no rows in the table</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928698">The column is an editable field</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928699">However, you might want to explicitly create the column in your upgrade trigger if you want the trigger to perform an action on the column such as populating it.</a></div>
+      <div class="B_-_Body"><a name="1928700">In the data model, the column must be defined as a property on an entity. The database upgrade will determine the correct datatype and nullability from the data model.</a></div>
+      <div class="B_-_Body"><a name="1928701">Creating a new column is moderately expensive in terms of performance of the upgrade.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1928702">Creating a Column</a></h6>
+      <div class="B_-_Body"><a name="1928703">To create a column, invoke the </a><span class="cv_-_computer_voice">create</span> method on the <span class="cv_-_computer_voice">IBeforeUpgradeColumn</span>.</div>
+      <div class="B_-_Body"><a name="1928704">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928705">var table = getTable("TableName")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928706"> </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928707"> // Create column with given name.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928708"> // Column must be backed by a property on an entity.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928709"> // Upgrader will figure out the correct datatype and nullability.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928710"> </a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928711"> table.getColumn("ColumnName").create()</a></PRE>
+      <h6 class="HS_-_Head_Sub"><a name="1928712">Creating a Non-nullable Column with an Initial Value</a></h6>
+      <div class="B_-_Body"><a name="1928713">The upgrader throws an exception if you try to add a new non-nullable column without a default value and there are rows in the table. For non-nullable columns, either specify a default value, or create a version trigger that will populate the column.</a></div>
+      <div class="B_-_Body"><a name="1928714">To create a new column as non-nullable with an initial value, use the </a><span class="cv_-_computer_voice">createNonNullableWithInitialValue()</span> method. In the data model, the column must be defined as non-nullable.</div>
+      <div class="B_-_Body"><a name="1928715">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928716">IBeforeUpgradeTable table = getTable("TableName")</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928717">table.getColumn("ColumnName").createNonNullableWithInitialValue(</a><span class="pc_-_parameter_in_code">Initial value</span>)</PRE>
+      <div class="B_-_Body"><a name="1928718">The initial value must be of the appropriate type for the column's datatype. You can alter this value in later steps as needed.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="1928719">Creating a Temporary Column</a></h6>
+      <div class="B_-_Body"><a name="1928720">Use the </a><span class="cv_-_computer_voice">createTempColumn</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> to add a temporary column to the table. The <span class="cv_-_computer_voice">createTempColumn</span> method takes two parameters, a <span class="cv_-_computer_voice">String</span> for the column name and an <span class="cv_-_computer_voice">IDataType</span> for the column data type. <span class="cv_-_computer_voice">createTempColumn</span> creates a new nullable column with the given name and datatype to hold temporary data. You must explicitly drop the temporary column during the upgrade. The schema verifier will report an error during server startup if the column has not been dropped. You can create the temporary column in a <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> and drop it in an <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span>. This approach is useful when you want to move data from a column that will be removed during the upgrade to a column that will be created during the upgrade.</div>
+      <div class="B_-_Body"><a name="1928721">In the following example, a </a><span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> adds a temporary <span class="cv_-_computer_voice">shorttext</span> column to an existing entity and populates it with data from another column on a different entity. An <span class="cv_-_computer_voice">AfterUpgradeVersionTrigger</span> moves the data to a new entity.</div>
+      <div class="B_-_Body" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 2.0pt; margin-top: 5.0pt; text-transform: none; vertical-align: baseline"><span class="ri_-_run_in_header"><a name="1928722">BeforeUpgradeVersionTrigger Execute Method</a></span></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928723">// Add a temporary column to TableA.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928724">var tableA = getTable("TableA")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928725">var tempColumn = tableA.createTempColumn("tmp_column", DataTypes.shorttext())</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928726">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928727">// Get an IBeforeUpgradeUpdateBuilder for TableA.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928728">var ub = tableA.update()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928729">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928730">// Set the value of the temporary column to the value of ColumnA.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928731">ub.set(tempColumn, ub.getColumnRef("ColumnA")) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928732">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928733">ub.execute()</a></PRE>
+      <div class="B_-_Body" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 2.0pt; margin-top: 5.0pt; text-transform: none; vertical-align: baseline"><span class="ri_-_run_in_header"><a name="1928734">AfterUpgradeVersionTrigger Execute Method</a></span></div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928735">// Get an IUpdateBuilder for TableA.</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928736">var ub = getTable("TableA").update().withLogSQL(true)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928737">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928738">var q = new Query(Account).withLogSQL(true)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928739">q.compare("ID", Equals, ub.getQuery().getColumnRef("Account"))</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928740">var piDesc = PaymentInstrument.Type.TypeInfo.getProperty("Description") as IEntityPropertyInfo</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928741">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928742">ub.set(piDesc, q, q.getColumnRef(DBFunction.Expr({"tmp_xyz"}))) // tmp_xyz is the DB table column name</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928743">ub.execute() </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928744">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928745">var tempColumn = getTable("someTable").getColumn("tmp_xyz").drop()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928747">Dropping Columns</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928748">The upgrader does not drop existing columns in order to prevent data loss. You can write a version trigger to move the data (not shown in example) and then drop the column by using the </a><span class="cv_-_computer_voice">drop()</span> method of the <span class="cv_-_computer_voice">IBeforeUpgradeColumn</span>.</div>
+      <div class="B_-_Body"><a name="1928749">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928750">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>")</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928751">table.getColumn("</a><span class="pc_-_parameter_in_code">ColumnName</span>").drop()</PRE>
+      <div class="B_-_Body"><a name="1928752">There is a </a><span class="cv_-_computer_voice">dropColumns</span> method on <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> to drop multiple columns in one statement. The <span class="cv_-_computer_voice">dropColumns</span> method takes an array of <span class="cv_-_computer_voice">IBeforeUpgradeColumn</span> objects.</div>
+      <div class="B_-_Body"><a name="1928753">For example:</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928754">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>")</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928755">table.dropColumns(table.getColumn("</a><span class="pc_-_parameter_in_code">ColumnName2</span>"), table.getColumn("<span class="pc_-_parameter_in_code">ColumnName3</span>"));</PRE>
+      <div class="B_-_Body"><a name="1928756">In Oracle, dropping a column usually has little effect on upgrade performance. Dropping a column actually marks the column as unused in the metadata. At a later point, the DBA is responsible for performing the necessary cleanup. You can override this functionality and force columns to be dropped right away.</a></div>
+      <div class="B_-_Body"><a name="1928757">In SQL Server, dropping a column is performance-intensive because the RDBMS has to do some clean up work.</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928759">Renaming Columns</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928760">To rename a column use the rename function on the column object.</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928761">override function execute() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928762">&nbsp;&nbsp;getTable("</a><span class="pc_-_parameter_in_code">TableName</span>").getColumn("<span class="pc_-_parameter_in_code">ColumnName</span>").rename("<span class="pc_-_parameter_in_code">NewColumnName</span>")</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928763">}</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928765">Setting a Column Value for a Specific Subtype</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928766">To set a column to a specific value for specific subtypes, use the </a><span class="cv_-_computer_voice">set</span> and <span class="cv_-_computer_voice">compare</span> methods of an <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>. Get the typekey ID for comparison using the <span class="cv_-_computer_voice">BeforeUpgradeVersionTrigger</span> method <span class="cv_-_computer_voice">getTypekeyID</span>.</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928767">&nbsp;&nbsp;&nbsp;&nbsp;final var myTable = getTable("tableName")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928768">&nbsp;&nbsp;&nbsp;&nbsp;final var myTypecode = getTypeKeyID("</a><span class="pc_-_parameter_in_code">typelist name</span>", "<span class="pc_-_parameter_in_code">typelist code</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928769">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928770">&nbsp;&nbsp;&nbsp;&nbsp;final var updateBuilder = myTable.update()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928771">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928772">&nbsp;&nbsp;&nbsp;&nbsp;updateBuilder</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928773">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.set("myColumn", "</a><span class="pc_-_parameter_in_code">some value</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928774">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.compare("subtype", Equals, myTypecode)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928775">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928776">&nbsp;&nbsp;&nbsp;&nbsp;updateBuilder.execute()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928778">Creating Tables</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928779">To add a new table to the database, define a new entity in the data model. The upgrade creates the table automatically. However, you might want to explicitly create the table in your upgrade trigger if you want the trigger to perform an action on the table such as populating it.</a></div>
+      <div class="B_-_Body"><a name="1928780">Creating a new table has negligible impact on upgrade performance. </a></div>
+      <div class="B_-_Body"><a name="1928781">You can create a regular table using the </a><span class="cv_-_computer_voice">create</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>. The table must first be defined in the data model.</div>
+      <div class="B_-_Body"><a name="1928782">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1928783">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>").create()</div>
+      <h6 class="HS_-_Head_Sub"><a name="1928784">Creating Temporary Tables</a></h6>
+      <div class="B_-_Body"><a name="1928785">You can add a temporary table to the database based on either the current database schema for a table or the data model definition of a table. You can also create a temporary table with a custom definition.</a></div>
+      <div class="B_-_Body"><a name="1928786">To create a temporary table based on the current table schema in the database, use the </a><span class="cv_-_computer_voice">createNewTempTableBasedOnCurrentSchema</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>. The table must be associated with an entity and exist in the database. The returned temporary table will contain the columns that this table has in the database currently. The columns may not match those specified in the entity metadata. For example, the metadata might contain a new column that has not yet been created. The <span class="cv_-_computer_voice">createNewTempTableBasedOnCurrentSchema</span> method is usually more appropriate than <span class="cv_-_computer_voice">createNewTempTableBasedOnThis</span> if you want to copy data from this table into the new temporary table as the columns will match exactly.</div>
+      <div class="B_-_Body"><a name="1928787">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1928788">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>").createNewTempTableBasedOnCurrentSchema()</div>
+      <div class="B_-_Body"><a name="1928789">To create a temporary table based on the entity definition of a table in the data model, use the </a><span class="cv_-_computer_voice">createNewTempTableBasedOnThis</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>. Columns that do not exist in the table are not created on the temporary table, even if the metadata defines such a column. This table may not contain columns that are going to be renamed. The metadata reflects the new name for the column but does not have an entry for the old name, so it would not be added to the temporary table. </div>
+      <div class="B_-_Body"><a name="1928790">For example:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="1928791">var table = getTable("</a><span class="pc_-_parameter_in_code">TableName</span>").createNewTempTableBasedOnThis()</div>
+      <div class="B_-_Body"><a name="1928792">To create a temporary table with a custom definition, use the </a><span class="cv_-_computer_voice">createAsNewTempTable</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>. This method takes a Pair array in which the first object is a <span class="cv_-_computer_voice">String</span> defining the column name and the second object is an <span class="cv_-_computer_voice">IDataType</span> defining the column data type.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928794">Renaming Tables</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928795">To rename a table use the rename function on the table object.</a></div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928796">override function execute() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928797">&nbsp;&nbsp;getTable("</a><span class="pc_-_parameter_in_code">extTableName</span>").rename("<span class="pc_-_parameter_in_code">TableName_EXT</span>")</PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928798">}</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928800">Deleting Rows</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928801">To delete rows from a table, use the </a><span class="cv_-_computer_voice">delete</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> or <span class="cv_-_computer_voice">IAfterUpgradeTable</span>. The <span class="cv_-_computer_voice">delete</span> method returns a delete builder (<span class="cv_-_computer_voice">IBeforeUpgradeDeleteBuilder</span> that provides methods for comparing column data to restrict the rows that are deleted.</div>
+      <div class="B_-_Body"><a name="1928802">In the following example, all rows that have a </a><span class="cv_-_computer_voice">columnA</span> value of <span class="cv_-_computer_voice">0</span> are deleted.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928803">var table =  getTable("SomeTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928804">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928805">var deleteBuilder = table.delete()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928806">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928807">deleteBuilder.Query.compare("columnA", Equals, 0)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928808">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928809">deleteBuilder.execute()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928811">Inserting Rows</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928812">To insert rows of data use the </a><span class="cv_-_computer_voice">insert</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> or <span class="cv_-_computer_voice">IAfterUpgradeTable</span>. The <span class="cv_-_computer_voice">insert</span> method returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeInsertBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IInsertBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable)</span> for SQL to perform an insert operation.</div>
+      <div class="B_-_Body"><a name="1928813">In the following example, an </a><span class="cv_-_computer_voice">IBeforeUpgradeInsertBuilder</span> is used to add two rows with three columns to table <span class="cv_-_computer_voice">myTable</span>. The <span class="cv_-_computer_voice">IBeforeUpgradeInsertBuilder</span> includes a description.</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928814">&nbsp;&nbsp;&nbsp;&nbsp;var myTable = getTable("SomeTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928815">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928816">&nbsp;&nbsp;&nbsp;&nbsp;var insertBuilder = myTable.insert().withDescription("A custom insert</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928817">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger to add two rows.")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928818">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928819">&nbsp;&nbsp;&nbsp;&nbsp;insertBuilder</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928820">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnA", "</a><span class="pc_-_parameter_in_code">value of column A for first row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928821">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnB", "</a><span class="pc_-_parameter_in_code">value of column B for first row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928822">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnC", "</a><span class="pc_-_parameter_in_code">value of column C for first row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928823">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928824">&nbsp;&nbsp;&nbsp;&nbsp;insertBuilder.execute()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928825">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928826">// add a second row</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928827">&nbsp;&nbsp;&nbsp;&nbsp;insertBuilder</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928828">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnA", "</a><span class="pc_-_parameter_in_code">value of column A for second row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928829">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnB", "</a><span class="pc_-_parameter_in_code">value of column B for second row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928830">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.mapColumn("columnC", "</a><span class="pc_-_parameter_in_code">value of column C for second row</span>")</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928831">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928832">&nbsp;&nbsp;&nbsp;&nbsp;insertBuilder.execute()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928834">Inserting Data Selected from Another Table</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928835">To insert data selected from another table use the </a><span class="cv_-_computer_voice">insertSelect</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> or <span class="cv_-_computer_voice">IAfterUpgradeTable</span>. The <span class="cv_-_computer_voice">insertSelect</span> method returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeInsertSelectBuilder</span> for <span class="cv_-_computer_voice">IBeforeUpgradeTable</span>, <span class="cv_-_computer_voice">IInsertSelectBuilder</span> for <span class="cv_-_computer_voice">IAfterUpgradeTable</span>). The builder includes a <span class="cv_-_computer_voice">mapColumn</span> method that can be passed explicit values, columns, or a query.</div>
+      <div class="B_-_Body"><a name="1928836">In the following example, the trigger sets </a><span class="cv_-_computer_voice">targetTable.column1</span> to an explicit value. The trigger sets <span class="cv_-_computer_voice">targetTable.column2</span> to the value of <span class="cv_-_computer_voice">sourceTable.sourceColumn</span>. Because there is no comparison being performed, the trigger will insert a row in the target table for each row in the source table:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928837">var sourceTable = getTable("sourceTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928838">var targetTable =  getTable("targetTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928839">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928840">var insertSelectBuilder = targetTable.insertSelect(sourceTable)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928841">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928842">insertSelectBuilder.mapColumn("column1", "value")    // sets a hard-coded value</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928843">&nbsp;&nbsp;.mapColumn("column2", sourceTable.getColumn("sourceColumn"))    // sets column2 on target table to</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928844">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// source table sourceColumn</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928845">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928846">insertSelectBuilder.execute()</a></PRE>
+      <div class="B_-_Body"><a name="1928847">In the next example, an existing table, </a><span class="cv_-_computer_voice">sourceTable</span>, is split into two tables, <span class="cv_-_computer_voice">targetTable1</span> and <span class="cv_-_computer_voice">targetTable2</span>. </div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928848">var sourceTable = getTable("sourceTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928849">var targetTable1 =  getTable("targetTable1")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928850">var targetTable2 =  getTable("targetTable2")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928851">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928852">var insertSelectBuilder1 = targetTable1.insertSelect(sourceTable)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928853">var insertSelectBuilder2 = targetTable2.insertSelect(sourceTable)</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928854">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928855">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928856">insertSelectBuilder1.mapColumn("column1", sourceTable.getColumn("sourceColumn1")) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928857">&nbsp;&nbsp;.mapColumn("column2", sourceTable.getColumn("sourceColumn2"))</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928858">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928859">insertSelectBuilder1.execute()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928860">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928861">insertSelectBuilder2.mapColumn("column1", sourceTable.getColumn("sourceColumn3")) </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928862">&nbsp;&nbsp;.mapColumn("column2", sourceTable.getColumn("sourceColumn4"))</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928863">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928864">insertSelectBuilder2.execute()</a></PRE>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928866">Updating Rows</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928867">To update rows in a table, use the </a><span class="cv_-_computer_voice">update</span> method of <span class="cv_-_computer_voice">IBeforeUpgradeTable</span> or <span class="cv_-_computer_voice">IAfterUpgradeTable</span>. This method returns a builder (<span class="cv_-_computer_voice">IBeforeUpgradeUpdateBuilder</span> or <span class="cv_-_computer_voice">IUpdateBuilder</span>). The builder includes methods to compare data to restrict which rows are updated.</div>
+      <div class="B_-_Body"><a name="1928868">In the following example, table </a><span class="cv_-_computer_voice">SomeTable</span> is updated to set <span class="cv_-_computer_voice">column1</span> to <span class="cv_-_computer_voice">SomeValue</span> for each row where the subtype matches a certain entity type:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928869">var table =  getTable("SomeTable")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928870">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928871">// get IBeforeUpgradeUpdateBuilder</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928872">var ub = table.update()</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928873">&nbsp;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928874">// set column 1 to SomeValue</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928875">ub.set("column1", "SomeValue")</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928876">&nbsp;&nbsp;// where </a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928877">&nbsp;&nbsp;.compare("subType", Equals, getTypeKeyID(</a><span class="pc_-_parameter_in_code">EntityType</span>)) </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928878">&nbsp;</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928879">ub.execute()</a></PRE>
+      <h4 class="H2_-_Heading_2"><a name="1928881">Upgrading Archived Entities</a></h4>
+      <div class="B_-_Body"><a name="1928882">If you implement archiving, and you make custom data model changes, then you can upgrade the archived XML using the </a><span class="cv_-_computer_voice">IDatamodelUpgrade</span> plugin.</div>
+      <div class="B_-_Body"><a name="1928883">Simple data model changes do not require a custom trigger. These include:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928884">Adding a new entity</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928885">Updating denormalization columns</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928886">Adding editable columns such as </a><span class="cv_-_computer_voice">updatetime</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928887">Adding new columns</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928888">Changing the nullability of a column</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928889">More complex transformations or those that could result in loss of data require a version trigger. These include:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928890">changing a datatype (other than just length)</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928891">migrating data from one table or column to another</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928892">dropping a column</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928893">dropping a table</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928894">renaming a column</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="1928895">renaming a table</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928899">PolicyCenter upgrades an archived entity as the entity is restored. </a></div>
+      <div class="B_-_Body"><a name="1928900">The </a><span class="cv_-_computer_voice">IDatamodelChange</span> interface includes a <span class="cv_-_computer_voice">getArchivedDocumentUpgradeVersionTrigger</span><span style="font-family: &quot;Lucida Sans Typewriter&quot;; font-size: 7.0pt"> </span>method that returns an <span class="cv_-_computer_voice">ArchivedDocumentUpgradeVersionTrigger</span>.</div>
+      <div class="B_-_Body"><a name="1928901">You can define custom </a><span class="cv_-_computer_voice">ArchivedDocumentUpgradeVersionTrigger</span> entities to modify archived XML. The <span class="cv_-_computer_voice">ArchivedDocumentUpgradeVersionTrigger</span> is an abstract class that you can extend to create your custom triggers.</div>
+      <div class="B_-_Body"><a name="1928902">Define the constructor of your custom </a><span class="cv_-_computer_voice">ArchivedDocumentUpgradeVersionTrigger</span> to call the constructor of the superclass and pass it a numeric value. For example:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="1928903">construct() {</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="1928904">&nbsp;&nbsp;super(171)</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="1928905">}</a></PRE>
+      <div class="B_-_Body"><a name="1928906">This numeric value is the extension version to which your trigger applies. If you run the upgrade against a database with a lower extension version, then your custom trigger is called. The current extension version is defined in </a><span class="cv_-_computer_voice">modules/configuration/config/extensions/extensions.properties.</span></div>
+      <div class="B_-_Body"><a name="1928907">Provide an override definition of the </a><span class="cv_-_computer_voice">get Description</span> property to return a <span class="cv_-_computer_voice">String</span> that describes the actions of your trigger.</div>
+      <div class="B_-_Body"><a name="1928908">Provide an override definition for the </a><span class="cv_-_computer_voice">execute</span> function to define the actions that you want your custom trigger to make on archived XML. </div>
+      <div class="B_-_Body"><a name="1928909">When the upgrade executes your custom trigger, it wraps each XML entity in an </a><span class="cv_-_computer_voice">IArchivedEntity</span> object. Each typekey is wrapped in an <span class="cv_-_computer_voice">IArchivedTypekey</span> object. The upgrade operates on a single XML document at a time.</div>
+      <div class="B_-_Body"><span class="cv_-_computer_voice"><a name="1928910">ArchivedDocumentUpgradeVersionTrigger</a></span> provides the following key operations:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928911">getArchivedEntitySet(</a></span><span class="ps_-_parameter_in_code_snippets">entityName</span><span class="cv_-_computer_voice"> : String)</span> – returns an <span class="cv_-_computer_voice">IArchivedEntitySet</span> object that contains all <span class="cv_-_computer_voice">IArchivedEntity</span> objects of the given type in the XML document.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><span class="cv_-_computer_voice"><a name="1928912">IArchivedEntitySet</a></span> provides the following key methods:</div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928913">rename(</a></span><span class="ps_-_parameter_in_code_snippets">newEntityName</span><span class="cv_-_computer_voice"> : String)</span> – renames all rows in the set to the new name.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928914">delete()</a></span> – deletes all rows in the set.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928915">search(</a></span><span class="ps_-_parameter_in_code_snippets">predicate</span><span class="cv_-_computer_voice"> : Predicate&lt;IArchivedEntity&gt;)</span> – returns a <span class="cv_-_computer_voice">List</span> of <span class="cv_-_computer_voice">IArchivedEntity</span> objects that match the given predicate.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928916">create(</a></span><span class="ps_-_parameter_in_code_snippets">referenceInfo</span><span class="cv_-_computer_voice"> : String, </span><span class="ps_-_parameter_in_code_snippets">properties</span><span class="cv_-_computer_voice"> : List&lt;Pair&lt;String, Object&gt;&gt;)</span> – returns a new <span class="cv_-_computer_voice">IArchivedEntity</span> with the given properties. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><span class="cv_-_computer_voice"><a name="1928917">IArchivedEntity</a></span> provides the following key methods:</div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928918">delete()</a></span> – deletes just this row.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928919">getPropertyValue(</a></span><span class="ps_-_parameter_in_code_snippets">propertyName</span> : String<span class="cv_-_computer_voice">)</span> – returns the value of the property of the given name. If the property value is a reference to another entity, this method returns an <span class="cv_-_computer_voice">IArchivedEntity</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928920">move(</a></span><span class="ps_-_parameter_in_code_snippets">newEntityName</span><span class="cv_-_computer_voice"> : String)</span> – moves this to a new entity type of the given name. The type is created if it did not exist. You must add any required properties to the type.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928921">updatePropertyValue(</a></span><span class="ps_-_parameter_in_code_snippets">propertyName</span><span class="cv_-_computer_voice"> : String, </span><span class="ps_-_parameter_in_code_snippets">newValue</span><span class="cv_-_computer_voice"> : String)</span> – updates the property of the given name to the given value.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928922">getArchivedTypekeySet(</a></span><span class="ps_-_parameter_in_code_snippets">typekeyName</span><span class="cv_-_computer_voice"> : String)</span> – returns an <span class="cv_-_computer_voice">IArchivedTypekeySet</span> object that contains all <span class="cv_-_computer_voice">IArchivedTypekey</span> objects in the given typelist.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="1928923">getArchivedTypekey(typelistName : String, code : String)</a></span> – Returns an <span class="cv_-_computer_voice">IArchivedTypekey</span> representing the typekey.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><span class="cv_-_computer_voice"><a name="1928924">IArchivedTypekey</a></span> provides the following key method:</div>
+      <div class="BI2_-_Bullet_Item_002c_Level_2_outer" style="margin-left: 67pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI2_-_Bullet_Item_002c_Level_2_inner"><span class="cv_-_computer_voice"><a name="1928925">delete()</a></span> – deletes the typekey from the XML. </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928926">More methods are available for </a><span class="cv_-_computer_voice">IArchivedEntitySet</span>, <span class="cv_-_computer_voice">IArchivedEntity</span> and <span class="cv_-_computer_voice">IArchivedTypekey</span>. See the Gosu documentation for a full listing. Generate the Gosu documentation by navigating to the PolicyCenter bin directory and entering the following command:</div>
+      <div class="CS_-_Code_Single_Line"><a name="1928933">gwpc regen-gosudoc</a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="1928934">Incremental Upgrade</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="1928941">When PolicyCenter archives an entity, it records the current data model version on the entity. PolicyCenter upgrades an archived entity as the entity is restored. The upgrader executes the necessary archive upgrade triggers incrementally on each archived XML entity, according to the data model version of the archived entity. </a></div>
+      <div class="B_-_Body"><a name="1928942">An entity archived at one version might not be restored and upgraded until several intermediate data model upgrades have been performed. Therefore, do not delete your custom upgrade triggers.</a></div>
+      <div class="B_-_Body"><a name="1928943">Consider the following situation. Note that this example is for demonstration purposes only. The version numbers included do not represent actual PolicyCenter versions but are included to explain the incremental upgrade process. Each ’+’ after a version number indicates a custom data model change.</a></div>
+      <div class="B_-_Body" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 2.0pt; margin-top: 5.0pt; text-transform: none; vertical-align: baseline"><span class="ri_-_run_in_header"><a name="1928947">Guidewire data model changes</a></span></div>
+      <div class="B_-_Body"><a name="1928948">v6.0.0 – Entity does not have column X.</a></div>
+      <div class="B_-_Body"><a name="1928949">v6.0.1 – Guidewire adds column X to the entity with a default value of 100.</a></div>
+      <div class="B_-_Body"><a name="1928950">v6.0.2 – Guidewire updates the default value of column X to 200.</a></div>
+      <div class="B_-_Body" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 2.0pt; margin-top: 5.0pt; text-transform: none; vertical-align: baseline"><span class="ri_-_run_in_header"><a name="1928951">Implementation #1 upgrade path</a></span></div>
+      <div class="B_-_Body"><a name="1928952">v6.0.0+ – Start with version 6.0.0 data model with custom changes.</a></div>
+      <div class="B_-_Body"><a name="1928953">v6.0.0++ – More custom data model changes.</a></div>
+      <div class="B_-_Body"><a name="1928954">v6.0.0+++ – More custom data model changes.</a></div>
+      <div class="B_-_Body"><a name="1928955">v6.0.2+ – column X introduced with a default value of 200. </a></div>
+      <div class="B_-_Body"><a name="1928956">Result of upgrade of an entity archived at v6.0.0+: column X has value 200.</a></div>
+      <div class="B_-_Body"><a name="1928957">In this situation, version 6.0.1 was skipped in the upgrade path. Therefore, column X is added with the default value of 200 that it has in version 6.0.2.</a></div>
+      <div class="B_-_Body" style="color: #000000; font-style: normal; font-variant: normal; font-weight: bold; margin-bottom: 2.0pt; margin-top: 5.0pt; text-transform: none; vertical-align: baseline"><span class="ri_-_run_in_header"><a name="1928958">Implementation #2 upgrade path</a></span></div>
+      <div class="B_-_Body"><a name="1928959">v6.0.0+ – Start with version 6.0.0 data model with custom changes.</a></div>
+      <div class="B_-_Body"><a name="1928960">v6.0.0++ – More custom data model changes.</a></div>
+      <div class="B_-_Body"><a name="1928961">v6.0.1+ – column X introduced with a default value of 100.</a></div>
+      <div class="B_-_Body"><a name="1928962">v6.0.2+ – column X already exists.</a></div>
+      <div class="B_-_Body"><a name="1928963">Result of upgrade of an entity archived at v6.0.0+: column X has value 100.</a></div>
+      <div class="B_-_Body"><a name="1928964">In this situation, column X is added in version 6.0.1 with the default value of 100. During the upgrade from version 6.0.1 to version 6.0.2, column X already exists. Therefore, the upgrader does not add the column. A custom trigger would be required to update the value of X from 100 to 200 during the upgrade from version 6.0.1 to 6.0.2.</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

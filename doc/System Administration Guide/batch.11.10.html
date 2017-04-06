@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>List of Work Queues and Batch Processes</title>
+    <link rel="StyleSheet" href="css/batch.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter System Administration Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="batch.11.01.html#2166473">Batch Processing</a> : List of Work Queues and Batch Processes </span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2166473">List of Work Queues and Batch Processes </a></h3>
+      <div class="B_-_Body"><a name="2171706">PolicyCenter has a number of work queues and batch processes for different kinds of batch processing supported by PolicyCenter. The following topics describe the work queues and batch processes provided with PolicyCenter.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2173015">Running Batch Processing on a Schedule</a></h6>
+      <div class="B_-_Body"><a name="2173019">You can schedule many of the work queues and batch processes provided with PolicyCenter to run at regular intervals. To configure the schedule for running a work queue or a batch process, edit the schedule configuration file. In the </a><span class="uis_-_UI_element_Studio">Project</span> window in Studio, navigate to <span class="uis_-_UI_element_Studio">configuration</span> → <span class="uis_-_UI_element_Studio">config</span>, and then open <span class="cv_-_computer_voice">schedule-config.xml</span>. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2172150">Running Batch Processing from Server Tools</a></h6>
+      <div class="B_-_Body"><a name="2166485">You can run many of the work queues and batch processes provided with PolicyCenter on demand from the </a><span class="ui_-_UI_element">Work Queue Info</span> or <span class="ui_-_UI_element">Batch Process Info</span> pages. These pages are available from the <span class="ui_-_UI_element">Server Tools</span> tab. To access the tab, press <span class="cv_-_computer_voice">ALT+SHIFT+T</span>. Then, click <span class="ui_-_UI_element">Work Queue Info</span> to access the <span class="ui_-_UI_element">Work Queue Info</span> page, or click <span class="ui_-_UI_element">Batch Process Info</span> to access the <span class="ui_-_UI_element">Batch Process Info</span> page.</div>
+      <div class="B_-_Body"><a name="2172271">Users with the </a><span class="cv_-_computer_voice">internaltools</span> permission can access the <span class="ui_-_UI_element">Server Tools</span> tab. The Admin role has <span class="cv_-_computer_voice">internaltools</span> permission by default.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2172371">Running Batch Processing by using Maintenance Tools</a></h6>
+      <div class="B_-_Body"><a name="2172117">You can run many of the work queues and batch processes provided with PolicyCenter on demand from the command line by using the </a><span class="cv_-_computer_voice">maintenance_tools</span> command. If a work queue or batch process is not available from the <span class="ui_-_UI_element">Server Tools</span> tab, you can run it only by using the <span class="cv_-_computer_voice">maintenance_tools</span> command.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166489">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'batch.11.07.html#2166105', '');" title="Scheduling Work Queues and Batch Processes" name="2166497">“Scheduling Work Queues and Batch Processes”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.04.html#1472917', '');" title="Work Queue Info" name="2173088">“Work Queue Info”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.03.html#1472901', '');" title="Batch Process Info" name="2173073">“Batch Process Info”</a> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'batch.11.05.html#2165781', '');" title="Running Batch Processes" name="2166501">“Running Batch Processes”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166518">Activity Escalation</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166519">Code</a></span> – <span class="cv_-_computer_voice">ActivityEsc</span> </div>
+      <div class="B_-_Body"><a name="2166526">Activities in PolicyCenter can have an escalation date. The escalation date is the date on which PolicyCenter marks an open or overdue activity as requiring urgent attention. Activity Escalation batch processing operates on activities that need to be escalated due to the following criteria:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166527">The activity has an escalation date.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166528">The escalation date has passed.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166529">The activity has not already been escalated.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166530">For qualifying activities, the Activity Escalation process marks the activity as escalated and calls the activity escalation rules to determine any actions.</a></div>
+      <div class="B_-_Body"><a name="2166531">Use the </a><span class="ui_-_UI_element">Administration</span> tab to define escalation values for an activity pattern. Select an activity from the <span class="ui_-_UI_element">Activity Patterns</span> page and click <span class="ui_-_UI_element">Edit</span>.</div>
+      <div class="B_-_Body"><a name="2166532">Typically, you set deadlines by using </a><span class="ui_-_UI_element">Escalation Days. </span>However, you can set them in <span class="ui_-_UI_element">Escalation Hours </span>or both depending on business practices. </div>
+      <div class="B_-_Body"><a name="2166533">If you set your deadlines only in days, then run Activity Escalation batch processing no more frequently than daily. If your deadlines are shorter, run process more frequently to take action on overdue activities in a timely manner.</a></div>
+      <div class="B_-_Body"><a name="2166534">Do not delete an activity pattern that is in production as there could be old activities tied to the pattern. Instead, change the activity pattern setting </a><span class="ui_-_UI_element">Automated only</span> to <span class="ui_-_UI_element">Yes</span> to prevent users from accessing it from the user interface.</div>
+      <div class="B_-_Body"><a name="2166538">By default, PolicyCenter runs Activity Escalation batch processing every 30 minutes. Change this schedule as needed.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166539">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'activities.41.1.html#4704774', '');" title="Activities" name="2166543">“Activities” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'activities.41.1.html#4704774', '');" title="Activities">Application Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'activity-patterns.36.1.html#2072244', '');" title="Defining Activity Patterns" name="2166547">“Defining Activity Patterns” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'activity-patterns.36.1.html#2072244', '');" title="Defining Activity Patterns">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#16512060', '');" title="Exception" name="2166551">“Activity Escalation Rules” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#16512060', '');" title="Exception">Rules Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166552">Apply Pending Account Data Updates</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166553">Code</a></span> – <span class="cv_-_computer_voice">ApplyPendingAccountDataUpdates</span> </div>
+      <div class="B_-_Body"><a name="2166554">Apply any of the pending updates to account data. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166555">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'contacts.42.2.html#4750617', '');" title="Contact Overview" name="2166559">“Revisioning Contact Information in Policies” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'contacts.42.2.html#4750617', '');" title="Contact Overview">Application Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166560">Archive Policy Terms</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166561">Code</a></span> – <span class="cv_-_computer_voice">ArchivePolicyTerm</span> </div>
+      <div class="B_-_Body"><a name="2166562">Archive Policy Terms batch processing archives policy terms. The process calls the </a><span class="cv_-_computer_voice">IPCArchivingPlugin</span> to determine whether a policy can be archived. </div>
+      <div class="B_-_Body"><a name="2166563">For a policy period to be eligible for archiving, the server time must have reached the </a><span class="cv_-_computer_voice">PolicyTerm.NextArchiveCheckDate</span> date:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166566">For more information on policy term eligibility, see </a><a href="javascript:WWHClickedPopup('config', 'archiving.42.05.html#2503254', '');" title="Selecting Policy Terms for Archive Eligibility">“Selecting Policy Terms for Archive Eligibility” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'archiving.42.05.html#2503254', '');" title="Selecting Policy Terms for Archive Eligibility">Configuration Guide</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166568">For information on the archive work queue, and those policy periods that the archive process archived, excluded, or skipped, see </a><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.11.html#1565511', '');" title="Info Pages">“Archive Info”</a>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166572">After running Archive Policy Terms batch processing, Guidewire recommends that you update database statistics. This process makes large changes to the tables. Updating database statistics enables the optimizer to pick better queries based on more current data. For instructions to gather database statistics, see </a><a href="javascript:WWHClickedPopup('admin', 'database.05.08.html#1199461', '');" title="Configuring Database Statistics">“Configuring Database Statistics”</a>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166576">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'archiving-pc.37.6.html#4893725', '');" title="More Information on Archiving" name="2166580">“More Information on Archiving” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'archiving-pc.37.6.html#4893725', '');" title="More Information on Archiving">Application Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2166581">Guidewire strongly recommends that you contact Customer Support before implementing archiving.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166582">Audit Task</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166583">Code</a></span> – <span class="cv_-_computer_voice">AuditTask</span> </div>
+      <div class="B_-_Body"><a name="2166584">Audit task monitor.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166585">Bound Policy Exception</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166586">Code</a></span> – <span class="cv_-_computer_voice">BoundPolicyException</span> </div>
+      <div class="B_-_Body"><a name="2166587">Runs policy exception rules on every bound </a><span class="cv_-_computer_voice">PolicyPeriod</span> that has not had exception rules run on it for more than the number of days defined by <span class="cv_-_computer_voice">BoundPolicyThresholdDays</span> in <span class="cv_-_computer_voice">config.xml</span>. The <span class="cv_-_computer_voice">PolicyPeriod</span> must be either in force or expired within the last year.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166588">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166592">see </a><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception">“Policy Exception Rules” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception">Rules Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166593">Clear Policy Renewal Check Dates</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166594">Code</a></span> – <span class="cv_-_computer_voice">PolicyRenewalClearCheckDate</span> </div>
+      <div class="B_-_Body"><a name="2166595">This batch process clears (null out) the existing check date for all policies through a single direct database update statement. Because this is a direct update statement, this batch process is only available in maintenance mode (a run level of </a><span class="cv_-_computer_voice">NO_DAEMONS</span> or lower). Only run this process when:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166596">The configuration of automated policy renewals has changed significantly enough that there is a risk that some policies will be picked up unacceptably late for renewal. Ultimately, the </a><span class="cv_-_computer_voice">PolicyRenewalPlugin</span> controls the lead time any individual policy needs for renewal. By default, it depends on the code of that plugin and the <span class="cv_-_computer_voice">NotificationConfig</span> system table as accessed through the <span class="cv_-_computer_voice">NotificationConfigPlugin</span>. As you can overwrite the functionality of either plugin, which types of changes might significantly change the renewal start date will vary.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166597">When bringing the server up after the configuration update has been applied. Bring the server up to a maintenance mode (</a><span class="cv_-_computer_voice">NO_DAEMONS</span> or lower), run this batch process once, then bring the server all the way up.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166598">The danger of running this process at other times is that it issues a direct SQL update, and thus does not update bean version numbers or any other domain logic. If this process were executed while batch processes and users are running on the system, the actual renewal check dates could be polluted by some new and some old values. </a></div>
+      <div class="B_-_Body"><a name="2166599">This process is not available from the user interface and cannot be scheduled.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166600">Closed Policy Exception</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166601">Code</a></span> – <span class="cv_-_computer_voice">ClosedPolicyException</span> </div>
+      <div class="B_-_Body"><a name="2166602">Runs policy exception rules on every closed </a><span class="cv_-_computer_voice">PolicyPeriod</span> that has not had exception rules run on it for more than the number of days defined by <span class="cv_-_computer_voice">ClosedPolicyThresholdDays</span> in <span class="cv_-_computer_voice">config.xml</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166603">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception" name="2166607">“Policy Exception Rules” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception">Rules Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166608">Data Distribution</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166609">Code</a></span> – <span class="cv_-_computer_voice">DataDistribution</span> </div>
+      <div class="B_-_Body"><a name="2166613">Calculates the distribution of data in the PolicyCenter database. This process cannot be scheduled. You can run this process from PolicyCenter by pressing </a><span class="cv_-_computer_voice">ALT</span> + <span class="cv_-_computer_voice">SHIFT</span> + <span class="cv_-_computer_voice">T</span> to access the <span class="ui_-_UI_element">Server Tools</span>. Then click <span class="ui_-_UI_element">Info Pages</span> and select the <span class="ui_-_UI_element">Data Distribution</span> page. On that page, modify parameters for the data distribution batch job and click <span class="ui_-_UI_element">Submit Data Distribution Batch Job</span>. See <a href="javascript:WWHClickedPopup('admin', 'maintenance.13.11.html#1473614', '');" title="Info Pages">“Data Distribution”</a>.</div>
+      <div class="B_-_Body"><a name="2166620">You can also run this process from the command line by using the </a><span class="cv_-_computer_voice">maintenance_tools</span> command or from a web service. </div>
+      <h4 class="H2_-_Heading_2"><a name="2166621">Database Consistency Check</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166622">Code</a></span> – <span class="cv_-_computer_voice">DBConsistencyCheck</span></div>
+      <div class="B_-_Body"><a name="2166626">Runs consistency checks on the PolicyCenter database.</a></div>
+      <div class="B_-_Body"><a name="2166627">Do not launch this process using the </a><span class="cv_-_computer_voice">maintenance_tools</span> command. You cannot specify which checks to run or which tables to run the checks against with the <span class="cv_-_computer_voice">maintenance_tools</span> command. Instead, use the <span class="ui_-_UI_element">Consistency Checks</span> page to run the Database Consistency Check batch process from PolicyCenter. If you want to schedule this batch process, use the following command:</div>
+      <div class="CS_-_Code_Single_Line"><a name="2166631">system_tools -user </a><span class="pc_-_parameter_in_code">user</span> -password <span class="pc_-_parameter_in_code">password</span> -checkdbconsistency</div>
+      <div class="B_-_Body"><a name="2166632">You can specify tables and checks using this command with two optional arguments:</a></div>
+      <div class="CS_-_Code_Single_Line"><a name="2166633">-checkdbconsistency </a><span class="pc_-_parameter_in_code">tableSelection</span> <span class="pc_-_parameter_in_code">checkTypeSelection</span></div>
+      <div class="B_-_Body"><a name="2166634">The </a><span class="ps_-_parameter_in_code_snippets">tableSelection</span> argument can be specified as:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2166635">all</a></span> – Run consistency checks on all tables.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ps_-_parameter_in_code_snippets"><a name="2166636">table name</a></span> – The name of a single table on which to run checks.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2166637">tg.</a></span><span class="ps_-_parameter_in_code_snippets">table group name</span> – The name of a table group. Table groups are defined in <span class="cv_-_computer_voice">config.xml</span>. For more information, see <a href="javascript:WWHClickedPopup('install', 'install.6.07.html#2267775', '');" title="Defining Table Groups">“Defining Table Groups” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('install', 'install.6.07.html#2267775', '');" title="Defining Table Groups">Installation Guide</a></span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2166641">@</a></span><span class="ps_-_parameter_in_code_snippets">file name</span> – A file name with one or more valid table names or table group names entered in comma-separated values (CSV) format. Prefix table group names with <span class="cv_-_computer_voice">tg.</span>, such as <span class="cv_-_computer_voice">tg.MyTableGroup</span>. You can combine table groups and individual table names in the same file.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166642">The </a><span class="ps_-_parameter_in_code_snippets">checkTypeSelection</span> can be specified as:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2166643">all</a></span> – Run all consistency checks on the specified tables.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="ps_-_parameter_in_code_snippets"><a name="2166644">check name</a></span> – The typecode value of a single consistency check to run.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2166645">@</a></span><span class="ps_-_parameter_in_code_snippets">file name</span> – A file name with one or more valid consistency check names entered in comma-separated values (CSV) format.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166646">If you specify one optional argument, you must specify the other.</a></div>
+      <div class="B_-_Body"><a name="2166647">The Database Consistency Check process runs only on the batch server. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166648">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'database.05.07.html#1199437', '');" title="Checking Database Consistency" name="2166652">“Checking Database Consistency”</a> for an overview of database consistency checks</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.11.html#1532290', '');" title="Info Pages" name="2166659">“Consistency Checks”</a> for details of the Consistency Checks page in PolicyCenter</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'commandsref.14.06.html#1350094', '');" title="System Tools Command" name="2166663">“System Tools Command”</a> for an explanation of command line options</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166664">Database Statistics</a></h4>
+      <div class="B_-_Body"><a name="2166668">See </a><a href="javascript:WWHClickedPopup('admin', 'database.05.08.html#1199461', '');" title="Configuring Database Statistics">“Configuring Database Statistics”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166669">Deferred Upgrade Tasks</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166670">Code</a></span> – <span class="cv_-_computer_voice">DeferredUpgradeTasks</span></div>
+      <div class="B_-_Body"><a name="2166674">Deferred Upgrade Tasks batch processing is run following an upgrade of a database for a PolicyCenter environment with the archiving feature enabled. See </a><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.18.html#1929161', '');" title="Configuring the Database Upgrade">“Deferring Creation of Nonessential Indexes” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.18.html#1929161', '');" title="Configuring the Database Upgrade">Upgrade Guide</a></span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166679">Extract Rating Worksheets</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166680">Code</a></span> – <span class="cv_-_computer_voice">ExtractWorksheets</span> </div>
+      <div class="B_-_Body"><a name="2166681">Extract Rating Worksheets batch processing extracts rating worksheet data from worksheet container (</a><span class="cv_-_computer_voice">WorksheetContainer</span>) objects to files in a specified directory on the batch server. The process also marks <span class="cv_-_computer_voice">WorksheetContainer</span> objects for purging. </div>
+      <div class="B_-_Body"><a name="2166682">In the base configuration, Extract Rating Worksheets is disabled. After you enable it, you can run it manually or schedule it.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166683">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'ratingmgmt_config.49.12.html#1398846', '');" title="Configuring Rating Worksheets" name="2166687">“Extract Rating Worksheets Batch Process” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'ratingmgmt_config.49.12.html#1398846', '');" title="Configuring Rating Worksheets">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'batch.11.10.html#2166840', '');" title="List of Work Queues and Batch Processes" name="2166691">“Purge Rating Worksheets”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166692">Form Text Data Delete</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166693">Code</a></span> – <span class="cv_-_computer_voice">FormTextDataDelete</span> </div>
+      <div class="B_-_Body"><a name="2166694">Deletes orphaned, purged, or archived </a><span class="cv_-_computer_voice">FormTextData</span> entities. The <span class="cv_-_computer_voice">FormTextData</span> object stores the text data that makes up the XML data for a <span class="cv_-_computer_voice">Form</span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166695">Geocode Writer</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166696">Code</a></span> – <span class="cv_-_computer_voice">Geocode</span> </div>
+      <div class="B_-_Body"><a name="2166697">Searches for new addresses to geocode. This batch process runs periodically to update geocoding information on user contact primary addresses and account locations. The </a><span class="cv_-_computer_voice">UserContact</span> entity represents a PolicyCenter user.</div>
+      <div class="B_-_Body"><a name="2166701">By default, this schedulable process is disabled.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166702">Group Exception</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166703">Code</a></span> – <span class="cv_-_computer_voice">GroupException</span> </div>
+      <div class="B_-_Body"><a name="2166704">Runs the group exception rule sets on all groups in the system. By default, this process runs daily at 4:00 a.m.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166705">Impact Testing Export </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166706">Code</a></span> – <span class="cv_-_computer_voice">ImpactTestingExport</span> </div>
+      <div class="B_-_Body"><a name="2166707">Impact Testing Export batch processing exports test periods to an Excel file whenever you click </a><span class="ui_-_UI_element">Create Excel Export File</span> on the <span class="ui_-_UI_element">Impact Results</span> screen.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166708">Impact Testing Test Case Preparation </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166709">Code</a></span> – <span class="cv_-_computer_voice">ImpactTestingTestPrep</span> </div>
+      <div class="B_-_Body"><a name="2166710">This process generates baseline policy periods on the selected policies whenever you click </a><span class="ui_-_UI_element">Create Baselines</span> from the <span class="ui_-_UI_element">Create Baseline</span> screen.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166711">Impact Testing Test Case Run </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166712">Code</a></span> – <span class="cv_-_computer_voice">ImpactTestingTestRun</span> </div>
+      <div class="B_-_Body"><a name="2166713">This process generates test policy periods rated using the selected rate books whenever you click </a><span class="ui_-_UI_element">Quote Test Periods</span> from the <span class="ui_-_UI_element">Testing Periods</span> screen. </div>
+      <h4 class="H2_-_Heading_2"><a name="2166714">Job Expire</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166715">Code</a></span> – <span class="cv_-_computer_voice">JobExpire</span> </div>
+      <div class="B_-_Body"><a name="2166716">Expires a job if no action has been taken upon it for a configured period of time. By default, this process runs daily at 6:00 a.m.</a></div>
+      <div class="B_-_Body"><a name="2166717">Job Expire batch processing changes jobs from </a><span class="cv_-_computer_voice">New</span>, <span class="cv_-_computer_voice">Draft</span>, or <span class="cv_-_computer_voice">Quote</span> status to <span class="cv_-_computer_voice">Expired</span>. In the default configuration, the process expires submissions in these statuses that are at least seven days past the effective date of the policy. You can configure the expiration threshold as the number of days past the effective date or the creation date.</div>
+      <div class="B_-_Body"><a name="2166718">You can enable expiration for other job types.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166719">To configure the expiration effective date threshold</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2166723">In Studio, expand </a><span class="uis_-_UI_element_Studio">configuration</span><span class="cv_-_computer_voice"> → </span><span class="uis_-_UI_element_Studio">config</span> and open <span class="cv_-_computer_voice">config.xml</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166724">Search for </a><span class="cv_-_computer_voice">JobExpirationEffDateThreshold</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166725">Change the value to the number of days past the effective date after which a job can be expired.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h6 class="HS_-_Head_Sub"><a name="2166726">To configure the expiration create date threshold:</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2166730">In Studio, expand </a><span class="uis_-_UI_element_Studio">configuration</span><span class="cv_-_computer_voice"> → </span><span class="uis_-_UI_element_Studio">config</span> and open <span class="cv_-_computer_voice">config.xml</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166731">Search for </a><span class="cv_-_computer_voice">JobExpirationCreateDateThreshold</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166732">Change the value to the number of days past the creation date after which a job can be expired.</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2166733">Setting </a><span class="cv_-_computer_voice">JobExpirationCreateDateThreshold</span> to a negative number effectively disables create date checking, since no job can be created with a future create date. However, the <span class="cv_-_computer_voice">JobExpirationEffDateThreshold</span> check is still active.</div>
+      <div class="B_-_Body"><a name="2166734">Job Expire batch processing examines all jobs meeting the date criteria. but only expires those jobs for which </a><span class="cv_-_computer_voice">job.canExpireJob()</span> returns <span class="cv_-_computer_voice">true</span>.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166735">To enable expiration for a job type</a></h6>
+      <div class="LS_-_List_Start_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LS_-_List_Start_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	1.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LS_-_List_Start_inner"><a name="2166739">In Studio, expand </a><span class="uis_-_UI_element_Studio">configuration</span><span class="cv_-_computer_voice"> → </span><span class="uis_-_UI_element_Studio">config</span> and open <span class="cv_-_computer_voice">config.xml</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	2.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166740">Search for </a><span class="cv_-_computer_voice">JobExpireCheck&lt;</span><span class="p_-_parameter">JobType</span><span class="cv_-_computer_voice">&gt;</span>, for example, <span class="cv_-_computer_voice">JobExpireCheckAudit</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	3.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166741">Change the value from </a><span class="cv_-_computer_voice">false</span> to <span class="cv_-_computer_voice">true</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LI_-_List_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="LI_-_List_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="ri_-_run_in_header">	4.	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="LI_-_List_Item_inner"><a name="2166742">(Audit only) Open </a><span class="cv_-_computer_voice">AuditProcess.gs</span> in the <span class="cv_-_computer_voice">gw.job</span> package. Modify the <span class="cv_-_computer_voice">canExpireJob</span> method to return <span class="cv_-_computer_voice">true</span> instead of <span class="cv_-_computer_voice">false</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="LP_-_List_Para"><a name="2166743">Performance of queries for jobs will be improved if all applicable jobs can be expired. Business requirements often do not permit expiration of Audit jobs. As a result </a><span class="cv_-_computer_voice">canExpireJob()</span> will need to be overridden for Audit jobs if they are to be expired.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166744">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'jobs.13.4.html#4441399', '');" title="Configuring Policy Transactions" name="2166748">“Configuring Policy Transactions” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'jobs.13.4.html#4441399', '');" title="Configuring Policy Transactions">Application Guide</a></span> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'params.05.18.html#7257863', '');" title="Job Expiration Parameters" name="2166752">“Job Expiration Parameters” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'params.05.18.html#7257863', '');" title="Job Expiration Parameters">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166753">Open Policy Exception</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166754">Code</a></span> – <span class="cv_-_computer_voice">OpenPolicyException</span> </div>
+      <div class="B_-_Body"><a name="2166755">Runs policy exception rules on every open, unlocked </a><span class="cv_-_computer_voice">PolicyPeriod</span> that has not had exception rules run on it for more than the number of days defined by <span class="cv_-_computer_voice">OpenPolicyExceptionThresholdDays</span> in <span class="cv_-_computer_voice">config.xml</span>. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2166756">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception" name="2166760">“Policy Exception Rules” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17147488', '');" title="Exception">Rules Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166761">Overdue Premium Report</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166762">Code</a></span> – <span class="cv_-_computer_voice">OverDuePremiumReport</span> </div>
+      <div class="B_-_Body"><a name="2166763">Overdue premium report monitor.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166764">Phone Number Normalizer</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166765">Code</a></span> – <span class="cv_-_computer_voice">PhoneNumberNormalizer</span> </div>
+      <div class="B_-_Body"><a name="2166768">Runs the registered plugin that implements the </a><span class="cv_-_computer_voice">IPhoneNumberNormalizer</span> interface. See <a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.27.html#1931520', '');" title="Upgrading Phone Numbers">“Upgrading Phone Numbers” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-db-d.12.27.html#1931520', '');" title="Upgrading Phone Numbers">Upgrade Guide</a></span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166770">Policy Hold Job Evaluation</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166771">Code</a></span> – <span class="cv_-_computer_voice">PolicyHoldJobEval</span> </div>
+      <div class="B_-_Body"><a name="2166772">Evaluates each job against the policy holds blocking it.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166773">Policy Renewal Start</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166774">Code</a></span> – <span class="cv_-_computer_voice">PolicyRenewalStart</span> </div>
+      <div class="B_-_Body"><a name="2166775">Policy renewal start monitor. By default, this process runs daily at 1:00 a.m.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166776">Populate Search Columns</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166777">Code</a></span> – <span class="cv_-_computer_voice">PopulateSearchColumns</span> </div>
+      <div class="B_-_Body"><a name="2166778">Populates denormalized </a><span class="cv_-_computer_voice">searchColumn</span> columns from their designated <span class="cv_-_computer_voice">sourceColumn</span> columns. </div>
+      <div class="B_-_Body"><a name="2166779">This process can be run only from the </a><span class="cv_-_computer_voice">maintenance_tools</span> command or using a web service.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166780">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'entities.19.08.html#2879555', '');" title="Entity Data Objects" name="2166784">“The &lt;searchColumn&gt; Subelement” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'entities.19.08.html#2879555', '');" title="Entity Data Objects">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166785">Premium Ceding</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166786">Code</a></span> – <span class="cv_-_computer_voice">PremiumCeding</span> </div>
+      <div class="B_-_Body"><a name="2166787">Reinsurance ceding of premium. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166788">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('integration', 'reinsurance-integration.27.8.html#2241520', '');" title="Reinsurance Ceding Plugin" name="2166792">“Reinsurance Ceding Plugin” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('integration', 'reinsurance-integration.27.8.html#2241520', '');" title="Reinsurance Ceding Plugin">Integration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166794">Process Completion Monitor</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166795">Code</a></span> – <span class="cv_-_computer_voice">ProcessCompletionMonitor</span></div>
+      <div class="B_-_Body"><a name="2166796">You can use the schedulable Process Completion Monitor process to launch custom actions after a batch process completes. See </a><a href="javascript:WWHClickedPopup('admin', 'batch.11.08.html#2174563', '');" title="Performing Custom Actions After Batch Processing Completion">“Performing Custom Actions After Batch Processing Completion”</a>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166801">Process History Purge</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166802">Code</a></span> – <span class="cv_-_computer_voice">ProcessHistoryPurge</span> </div>
+      <div class="B_-_Body"><a name="2166803">Purges batch process history data from the process history table. A large number of history records in the database can slow performance when a user accesses the </a><span class="ui_-_UI_element">Batch Process Info</span> or <span class="ui_-_UI_element">Work Queue Info</span> system tools.</div>
+      <div class="B_-_Body"><a name="2166804">Before you run Process History Purge, remove </a><span class="cv_-_computer_voice">WorkItem</span> and <span class="cv_-_computer_voice">InstrumentedWorkerTask</span> entities that reference <span class="cv_-_computer_voice">ProcessHistory</span>. Run the Purge Failed Work Items and Work Queue Instrumentation Purge processes to remove these entities. Run the Purge Failed Work Items process twice to complete the purge. The first run sets the date on the failed work items and the second run performs the actual purge.</div>
+      <div class="B_-_Body"><a name="2166805">The </a><span class="cv_-_computer_voice">BatchProcessHistoryPurgeDaysOld</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies the number of days to retain batch process history. Set <span class="cv_-_computer_voice">BatchProcessHistoryPurgeDaysOld</span> to be <span class="cv_-_computer_voice">5</span> days greater than <span class="cv_-_computer_voice">InstrumentedWorkerInfoPurgeDaysOld</span> and not less than 35 days. For example, if <span class="cv_-_computer_voice">InstrumentedWorkerInfoPurgeDaysOld</span> equals <span class="cv_-_computer_voice">40</span>, then set <span class="cv_-_computer_voice">BatchProcessHistoryPurgeDaysOld</span> to <span class="cv_-_computer_voice">45</span>. This guarantees that referring work queue history records and failed work items are deleted by the Purge Failed Work Items and Work Queue Instrumentation Purge processes. Work queue history records and failed work items that refer to a batch process history record must be deleted before Process History Purge can delete the record.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166806">Purge </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166807">Code</a></span> – <span class="cv_-_computer_voice">Purge</span> </div>
+      <div class="B_-_Body"><a name="2166808">Purges jobs and prunes policy periods that meet the purge and prune criteria. This process deletes jobs and other entities from the database. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166809">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'quotepurging-config.43.4.html#1123866', '');" title="Quote Purging Batch Processes" name="2166813">“Purge Batch Process” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'quotepurging-config.43.4.html#1123866', '');" title="Quote Purging Batch Processes">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166814">Purge Cluster Members</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166815">Code</a></span> – <span class="cv_-_computer_voice">PurgeClusterMembers</span> </div>
+      <div class="B_-_Body"><a name="2166816">Purges </a><span class="cv_-_computer_voice">ClusterMemberData</span> entities that have a <span class="cv_-_computer_voice">LastUpdate</span> value prior to the current date minus the value of the <span class="cv_-_computer_voice">ClusterMemberPurgeDaysOld</span> parameter. </div>
+      <div class="B_-_Body"><a name="2166817">This process can be scheduled or run from the user interface.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166819">Purge Failed Work Items</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166820">Code</a></span> – <span class="cv_-_computer_voice">PurgeFailedWorkItems</span> </div>
+      <div class="B_-_Body"><a name="2166821">Purges failed work items from all work queues. Run the Purge Failed Work Items process twice to complete the purge. The first run sets the date on the failed work items and the second run performs the actual purge.</a></div>
+      <h4 class="H2_-_Heading_2"><a name="2166822">Purge Message History</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166823">Code</a></span> – <span class="cv_-_computer_voice">PurgeMessageHistory</span> </div>
+      <div class="B_-_Body"><a name="2166824">Purges old message records from the message history table. The </a><span class="cv_-_computer_voice">KeepCompletedMessagesForDays</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies how many days a message can remain in the message history table before this process removes the message.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166825">Purge Old Transaction IDs</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166826">Code</a></span> – <span class="cv_-_computer_voice">PurgeTransactionIDs</span> </div>
+      <div class="B_-_Body"><a name="2166827">Purges </a><span class="cv_-_computer_voice">TransactionId</span> entities that have a <span class="cv_-_computer_voice">CreationDate</span> prior to the current date minus the value of the <span class="cv_-_computer_voice">TransactionIdPurgeDaysOld</span> parameter. The <span class="cv_-_computer_voice">TransactionIdPurgeDaysOld</span> parameter can be configured in the <span class="cv_-_computer_voice">config.xml</span> file.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166828">Purge Orphaned Policy Periods </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166829">Code</a></span> – <span class="cv_-_computer_voice">PurgeOrphanedPolicyPeriod</span> </div>
+      <div class="B_-_Body"><a name="2166830">Purges policy periods orphaned as a result of preemption. This batch process deletes policy periods and other entities from the database. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166831">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'quotepurging-config.43.4.html#1124131', '');" title="Quote Purging Batch Processes" name="2166835">“Purge Orphaned Policy Periods Batch Process” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'quotepurging-config.43.4.html#1124131', '');" title="Quote Purging Batch Processes">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166836">Purge Profiler Data</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166837">Code</a></span> – <span class="cv_-_computer_voice">PurgeProfilerData</span> </div>
+      <div class="B_-_Body"><a name="2166838">Purges data gathered by the profiler. The </a><span class="cv_-_computer_voice">ProfilerDataPurgeDaysOld</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies how many days to retain profiler data before this process removes the data.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166840">Purge Rating Worksheets</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166841">Code</a></span> – <span class="cv_-_computer_voice">purgeworksheets</span> </div>
+      <div class="B_-_Body"><a name="2166842">This process removes worksheet container (</a><span class="cv_-_computer_voice">WorksheetContainer</span>) objects that are marked for purging and are on policies whose jobs have been closed more than a specified number of days. In the base configuration this period is 90 days. In the base configuration, Extract Rating Worksheets batch processing marks the worksheets container objects for purging.</div>
+      <div class="B_-_Body"><a name="2166843">In the base configuration, this batch process is not scheduled to run on a regular basis. You can run it manually or schedule it.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166844">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'ratingmgmt_config.49.12.html#1398876', '');" title="Configuring Rating Worksheets" name="2166848">“Purge Rating Worksheet Batch Process” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'ratingmgmt_config.49.12.html#1398876', '');" title="Configuring Rating Worksheets">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'batch.11.10.html#2166679', '');" title="List of Work Queues and Batch Processes" name="2166852">“Extract Rating Worksheets”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166853">Purge Workflow</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166854">Code</a></span> – <span class="cv_-_computer_voice">PurgeWorkflows</span> </div>
+      <div class="B_-_Body"><a name="2166855">Purges completed workflows after resetting any referenced workflows. The </a><span class="cv_-_computer_voice">WorkflowPurgeDaysOld</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies how many days to retain workflow data before this process removes the data.</div>
+      <div class="B_-_Body"><a name="2166856">This process executes </a><span class="cv_-_computer_voice">gw.processes.PurgeWorkflow.gs</span>. You can modify this Gosu class to customize the functionality of this batch process.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166857">Purge Workflow Logs</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166858">Code</a></span> – <span class="cv_-_computer_voice">PurgeWorkflowLogs</span> </div>
+      <div class="B_-_Body"><a name="2166859">Purges logs of completed workflows. The </a><span class="cv_-_computer_voice">WorkflowLogPurgeDaysOld</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies how many days to retain workflow logs before this process removes the logs.</div>
+      <div class="B_-_Body"><a name="2166860">This process executes </a><span class="cv_-_computer_voice">gw.processes.PurgeWorkflowLogs.gs</span>. You can modify this Gosu class to customize the functionality of this batch process.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166861">Reset Purge Status and Check Dates </a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166862">Code</a></span> – <span class="cv_-_computer_voice">ResetPurgeStatusAndCheckDates</span> </div>
+      <div class="B_-_Body"><a name="2166863">Resets the purge status and purge or prune dates on the jobs. Run this process if and when you have a need to reset the purge status and purge date.</a></div>
+      <div class="B_-_Body"><a name="2166864">For each job, this batch process:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166865">Sets the </a><span class="cv_-_computer_voice">Job.PurgeStatus</span> property to <span class="cv_-_computer_voice">Unknown</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166866">Sets the </a><span class="cv_-_computer_voice">Job.NextPurgeCheckDate</span> to <span class="cv_-_computer_voice">null</span>.</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166867">For example, if a job has a </a><span class="cv_-_computer_voice">PurgeStatus</span> of <span class="cv_-_computer_voice">NoActionRequired</span> or <span class="cv_-_computer_voice">Pruned</span>, the batch process resets the <span class="cv_-_computer_voice">PurgeStatus</span> to <span class="cv_-_computer_voice">Unknown</span>.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166868">Retire Activities</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166869">Code</a></span> – <span class="cv_-_computer_voice">ActivityRetire</span> </div>
+      <div class="B_-_Body"><a name="2166870">Retires </a><span class="cv_-_computer_voice">Activity</span> records that are either canceled or dismissed.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166871">Retrieve Policy Terms</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166872">Code</a></span> – <span class="cv_-_computer_voice">RestorePolicyTerm</span> </div>
+      <div class="B_-_Body"><a name="2166873">Run this batch process to retrieve archived policy terms that have been marked for retrieving. A user can request that an archived policy term be retrieved. Retrieving a policy term generates an activity for the user who requested the retrieve. </a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166874">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'archiving-pc.37.4.html#4420940', '');" title="Retrieving Archived Policies" name="2166878">“Retrieving Archived Policies” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'archiving-pc.37.4.html#4420940', '');" title="Retrieving Archived Policies">Application Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166879">Solr Data Import</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166880">Code</a></span> – <span class="cv_-_computer_voice">SolrDataImport</span></div>
+      <div class="B_-_Body"><a name="2166881">Run this batch process to test the operation of the free-text batch load command, especially its embedded SQL query. This batch process is intended only for development mode. Do not run this process in production to load and reindex the Guidewire Solr Extension. Instead, run the free-text batch load command on the host where the Guidewire Solr Extension resides.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166882">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'search-free-text-batch-load.15.1.html#2060239', '');" title="Free-text Batch Load Command" name="2166886">“Free-text Batch Load Command”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'search.31.08.html#3089380', '');" title="Free-text Search System Architecture" name="2166890">“Free-text Search System Architecture” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'search.31.08.html#3089380', '');" title="Free-text Search System Architecture">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166892">Team Screens</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166894">Code</a></span> – <span class="cv_-_computer_voice">TeamScreens</span> </div>
+      <div class="B_-_Body"><a name="2166895">This batch process collects statistics for the </a><span class="ui_-_UI_element">Team</span> tab screens.</div>
+      <h6 class="HS_-_Head_Sub"><a name="2166896">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('app', 'team_views.62.1.html#4322983', '');" title="Team Management" name="2166900">“Team Management” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('app', 'team_views.62.1.html#4322983', '');" title="Team Management">Application Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'team_config.48.1.html#1123244', '');" title="Configuring the Team Tab" name="2166904">“Configuring the Team Tab” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'team_config.48.1.html#1123244', '');" title="Configuring the Team Tab">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166905">User Exception</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166906">Code</a></span> – <span class="cv_-_computer_voice">UserException</span> </div>
+      <div class="B_-_Body"><a name="2166907">Runs the user exception rule sets on all users in the system. By default, this process runs daily at 3:00 a.m.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166908">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17083497', '');" title="Exception" name="2166912">“User Exception Rules” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('rules', 'pc_rulesets.09.08.html#17083497', '');" title="Exception">Rules Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166913">Workflow</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166914">Code</a></span> – <span class="cv_-_computer_voice">Workflow</span> </div>
+      <div class="B_-_Body"><a name="2166915">This work queue wakes and runs workflow worker threads.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2166916">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'workflow.35.01.html#2402675', '');" title="Guidewire Workflow" name="2166920">“Guidewire Workflow” in the </a><span class="bt_-_book_title"><a href="javascript:WWHClickedPopup('config', 'workflow.35.01.html#2402675', '');" title="Guidewire Workflow">Configuration Guide</a></span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166921">Work Item Set Purge</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166922">Code</a></span> – <span class="cv_-_computer_voice">WorkItemSetPurge</span></div>
+      <div class="B_-_Body"><a name="2166923">Purges work item sets from the database. The </a><span class="cv_-_computer_voice">BatchProcessHistoryPurgeDaysOld</span> parameter in <span class="cv_-_computer_voice">config.xml</span> specifies the number of days to retain work item sets. This parameter also configures how many days to retain process history records, which are removed by the separate Process History Purge process.</div>
+      <h4 class="H2_-_Heading_2"><a name="2166924">Work Queue Instrumentation Purge</a></h4>
+      <div class="B_-_Body"><span class="ri_-_run_in_header"><a name="2166925">Code</a></span> – <span class="cv_-_computer_voice">WorkQueueInstrumentationPurge</span> </div>
+      <div class="B_-_Body"><a name="2166926">Purges instrumentation data for work queues. The </a><span class="cv_-_computer_voice">InstrumentedWorkerInfoPurgeDaysOld</span> parameter defines how long to retain work queue instrumentation data. You can download work queue instrumentation data for a work queue by clicking <span class="ui_-_UI_element">Download History</span> for the work queue on the <span class="ui_-_UI_element">Work Queue Info</span> page. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2166927">See also </a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('admin', 'maintenance.13.04.html#1472917', '');" title="Work Queue Info" name="2166931">“Work Queue Info”</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2166932">Other Processes</a></h4>
+      <div class="B_-_Body"><a name="2166939">Some processes included with PolicyCenter are used by PolicyCenter internally or are not used at all. You cannot run these processes from PolicyCenter, </a><span class="cv_-_computer_voice">maintenance_tools</span>, or an API.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2166943">Unused Processes</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166950">Some Guidewire platform processes that are not used by PolicyCenter are included in </a><span class="cv_-_computer_voice">PolicyCenter/modules/pl/config/metadata/BatchProcessType.tti</span>. You can ignore these processes. The processes include:</div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166951">Bulk Purge </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166952">Contact Auto Sync</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166953">Staging Table Delete Excluded Rows</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166954">Staging Table Encryption</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166955">Staging Table Integrity Check</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166956">Staging Table Load</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166957">Staging Table Populate Exclusion Table</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166958">Staging Table Statistics</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166959">Stat Report Writer </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2166960">Internal Processes</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2166964">Some Guidewire platform processes are used by PolicyCenter internally. These processes are run by PolicyCenter only to generate database performance reports. You cannot run these processes separately.</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166968">Microsoft DMV Report</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2166969">Oracle AWR Report</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="T_-_Table"><a name="2166970">&nbsp;</a></div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

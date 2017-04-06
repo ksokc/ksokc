@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Implementing the Correct Delegate</title>
+    <link rel="StyleSheet" href="css/domain_graph.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter Configuration Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="p-datamodel_2.html#2288200">Data Model Configuration</a> : <a class="WebWorks_Breadcrumb_Link" href="domain_graph.23.01.html#2288200">The Archiving Domain Graph</a> : <a class="WebWorks_Breadcrumb_Link" href="domain_graph.23.05.html#2288200">Including Objects in the Domain Graph</a> : Implementing the Correct Delegate</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h4 class="H2B_-_Heading_2_Break"><a name="2288200">Implementing the Correct Delegate</a></h4>
+      <div class="B_-_Body"><a name="2288201">The archiving process requires certain entity types to implement one or more of the following delegates to ensure that instances of the domain graph can be archived successfully. </a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2288205">RootInfo</a></span> – See <a href="javascript:WWHClickedPopup('config', 'domain_graph.23.06.html#2288233', '');" title="Implementing the Correct Delegate">The RootInfo Delegate</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2288209">Extractable</a></span> – See <a href="javascript:WWHClickedPopup('config', 'domain_graph.23.06.html#2500393', '');" title="Implementing the Correct Delegate">The Extractable Delegate</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><span class="cv_-_computer_voice"><a name="2288217">OverlapTable</a></span> – See <a href="javascript:WWHClickedPopup('config', 'domain_graph.23.06.html#2501568', '');" title="Implementing the Correct Delegate">The OverlapTable Delegate</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2288218">A delegate entity type is a reusable entity that contains an interface and a default implementation of that interface. A delegate may also add its own columns to the tables of entities that implement the delegate. This type of delegation enables an entity type to implement an interface while delegating the implementation to the delegate. </a></div>
+      <div class="NW_-_Note_Warning">
+        <span class="w_-_warning">WARNING  </span><a name="2312685">Do not change the archiving delegates that Guidewire base entities implement to alter the archiving domain graph. For example, do not change which entity type implements the </a><span class="cv_-_computer_voice">RootInfo</span> delegate or change which base entity types implement the <span class="cv_-_computer_voice">Extractable</span> and <span class="cv_-_computer_voice">OverlapTable</span> delegates. </div>
+      <h6 class="HS_-_Head_Sub"><a name="2288219">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'entities.19.06.html#2635205', '');" title="Delegate Data Objects" name="2288227">Delegate Data Objects</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2288233">The </a><span class="cvh_-_computer_voice_in_heading">RootInfo</span> Delegate </h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2497856">Whenever PolicyCenter archives an instance of the domain graph, it leaves behind in the PolicyCenter database an entity instance that provides the following:</a></div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2528549">Sufficient information for a minimal search on archived policy periods</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a name="2528638">Sufficient information to retrieve the date. </a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2528546">This entity type must implement the </a><span class="cv_-_computer_voice">RootInfo</span> delegate. No other entity type may implement the <span class="cv_-_computer_voice">RootInfo</span> delegate. </div>
+      <div class="B_-_Body"><a name="2528904">In PolicyCenter, the root information entity type is the </a><span class="cv_-_computer_voice">PolicyPeriod</span> entity. You cannot change which entity type implements the <span class="cv_-_computer_voice">RootInfo</span> delegate. It must always be <span class="cv_-_computer_voice">PolicyPeriod</span>. PolicyCenter does not archive the <span class="cv_-_computer_voice">PolicyPeriod</span> table. PolicyCenter archives only the tables that the <span class="cv_-_computer_voice">PolicyPeriod</span> entity type owns. </div>
+      <div class="NI_-_Note_Important">
+        <span class="n_-_note">IMPORTANT   </span><a name="2529807">Because PolicyCenter does not archive the </a><span class="cv_-_computer_voice">PolicyPeriod</span> table, the table continues to grow regardless of archiving. Therefore, Guidewire recommends against extending <span class="cv_-_computer_voice">PolicyPeriod</span> to store large amounts of data, such as <span class="cv_-_computer_voice">BLOB</span> fields.</div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2500393">The Extractable Delegate</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2500394">All entities in the archiving domain graph must implement the </a><span class="cv_-_computer_voice">Extractable</span> delegate. The converse is also true. No entity outside the domain graph may implement the <span class="cv_-_computer_voice">Extractable</span> delegate. The use of this delegate ensures the creation of the <span class="cv_-_computer_voice">ArchivePartition</span> column that PolicyCenter uses during the archive process. </div>
+      <div class="B_-_Body"><a name="2497961">The following metadata definition of the </a><span class="cv_-_computer_voice">Document</span> object shows that it implements the <span class="cv_-_computer_voice">Extractable</span> delegate:</div>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497962">&lt;internalExtension</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497963">  xmlns="http://guidewire.com/datamodel"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497964">  entityName="Document"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497965">  ...&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497966">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line" style="font-style: normal; font-variant: normal; font-weight: bold; text-transform: none; vertical-align: baseline"><span class="s_-_strong"><a name="2497967">&nbsp;&nbsp;&lt;implementsEntity name="Extractable"/&gt;</a></span></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2498198">&nbsp;&nbsp;...</a></PRE>
+      <div class="B_-_Body"><a name="2501565">In addition, if you add an edge foreign key to an entity that is part of the domain graph, the edge foreign key must also implement the </a><span class="cv_-_computer_voice">Extractable</span> delegate. For example, if you create a subtype of <span class="cv_-_computer_voice">Contact</span>, then it must implement the <span class="cv_-_computer_voice">Extractable</span> delegate. The edge foreign key does not inherit the <span class="cv_-_computer_voice">&lt;implementsEntity&gt;</span> delegate from the enclosing entity. If you do not define the edge foreign key to implement the <span class="cv_-_computer_voice">Extractable</span> delegate, the application server refuses to start.</div>
+      <div class="B_-_Body"><a name="2501616">In PolicyCenter, entities in the revision graph implement the </a><span class="cv_-_computer_voice">Extractable</span> delegate through the <span class="cv_-_computer_voice">EffDated</span> delegate. The following illustration shows how <span class="cv_-_computer_voice">PolicyLocation</span> implements <span class="cv_-_computer_voice">Extractable</span>. </div>
+      <div class="F_-_Figure"><a name="2501620"><img class="Default" src="images/domain_graph.23.06.1.png" style="display: inline; float: none; left: 0.0; top: 0.0" alt="" /></a></div>
+      <div class="H3_-_Heading_3_outer" style="margin-left: 36pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <h5 class="H3_-_Heading_3_inner" style="width: 18pt; white-space: nowrap"></h5>
+            </td>
+            <td width="100%">
+              <h5 class="H3_-_Heading_3_inner"><a name="2501568">The OverlapTable Delegate</a></h5>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="B_-_Body"><a name="2323159">Overlap tables are tables with rows that can exist either in the domain graph or as part of reference data, but not both. However, individual rows in the table exist in either the domain graph or the reference data. Any attempt to create a table row that exists in both the domain graph and the reference data causes archiving to fail.</a></div>
+      <div class="B_-_Body"><a name="2497973">In PolicyCenter, the </a><span class="cv_-_computer_voice">Document</span> and <span class="cv_-_computer_voice">Note</span> tables are overlap tables. Therefore, the <span class="cv_-_computer_voice">Document</span> and <span class="cv_-_computer_voice">Note</span> tables can exist in either the domain graph or as part of reference data.</div>
+      <div class="B_-_Body"><a name="2346135">Objects that use overlap tables must implement the </a><span class="cv_-_computer_voice">OverlapTable</span> delegate. Implementing the <span class="cv_-_computer_voice">OverlapTable</span> delegate creates an additional <span class="cv_-_computer_voice">Admin</span> column that PolicyCenter uses to determine which rows belong to the domain graph and which do not.</div>
+      <div class="B_-_Body"><a name="2288323">Because these objects are both inside and outside the domain graph, they must also implement the </a><span class="cv_-_computer_voice">Extractable</span> delegate. </div>
+      <div class="B_-_Body"><a name="2497978">The following metadata definition of the </a><span class="cv_-_computer_voice">Note</span> object illustrates the use of multiple delegate implementations:</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2497979">&lt;internalExtension</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497980">  xmlns="http://guidewire.com/datamodel"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497981">  entityName="</a><span class="s_-_strong">Note</span>"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497982">  ...&gt;</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497983">  &lt;implementsEntity</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497984">    name="</a><span class="s_-_strong">Extractable</span>"/&gt;</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497985">  &lt;implementsEntity</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2497986">    name="</a><span class="s_-_strong">OverlapTable</span>"/&gt;</PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

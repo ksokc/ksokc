@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Upgrading the PolicyCenter 4.0.x Configuration</title>
+    <link rel="StyleSheet" href="css/procedure-config-c.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter Upgrade Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="part-basicupgrade_2.html#1875907">Upgrading from 4.0.x</a> : Upgrading the PolicyCenter 4.0.x Configuration</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h2 class="CT_-_Chapter_Title"><a name="1875907">Upgrading the PolicyCenter 4.0.x Configuration</a></h2>
+      <div class="B_-_Body"><a name="1875958">This topic describes how to upgrade the PolicyCenter configuration from version 4.0.x. </a></div>
+      <div class="B_-_Body"><a name="1918223">If you are upgrading from an 8.0.x version, see </a><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-e.06.01.html#1842419', '');" title="Upgrading the PolicyCenter 8.0.x Configuration">“Upgrading the PolicyCenter 8.0.x Configuration”</a> instead.</div>
+      <div class="B_-_Body"><a name="1918216">If you are upgrading from a 7.0.x version, see </a><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-d.11.01.html#1842419', '');" title="Upgrading the PolicyCenter 7.0.x Configuration">“Upgrading the PolicyCenter 7.0.x Configuration”</a> instead.</div>
+      <div class="zChapterTopics">This topic includes:<a name="1682903">&nbsp;</a></div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.02.html#1888633', '');" title="Obtaining Configurations" name="1934203">Obtaining Configurations</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.03.html#1947912', '');" title="Creating a Configuration Backup" name="1934208">Creating a Configuration Backup</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.04.html#1948087', '');" title="Removing Patches" name="1934213">Removing Patches</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.05.html#1948093', '');" title="Removing Language Packs" name="1934218">Removing Language Packs</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.06.html#1947937', '');" title="Updating Infrastructure" name="1934223">Updating Infrastructure</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.07.html#1904024', '');" title="Upgrading the PolicyCenter 4.0 Configuration to 7.0" name="1934228">Upgrading the PolicyCenter 4.0 Configuration to 7.0</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.08.html#1889042', '');" title="PolicyCenter 7.0 Upgrade Tool Automated Steps" name="1934233">PolicyCenter 7.0 Upgrade Tool Automated Steps</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.09.html#1889672', '');" title="Configuring the PolicyCenter 8.0 Upgrade Tool" name="1934238">Configuring the PolicyCenter 8.0 Upgrade Tool</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.10.html#1889764', '');" title="Launching the PolicyCenter 8.0 Configuration Upgrade Tool" name="1934243">Launching the PolicyCenter 8.0 Configuration Upgrade Tool</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.11.html#1889806', '');" title="PolicyCenter 8.0.3 Configuration Upgrade Tool Automated Steps" name="1934248">PolicyCenter 8.0.3 Configuration Upgrade Tool Automated Steps</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.12.html#1945315', '');" title="Using the PolicyCenter 8.0.3 Upgrade Tool Interface" name="1934253">Using the PolicyCenter 8.0.3 Upgrade Tool Interface</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.13.html#1946972', '');" title="Merging Product Model Files" name="1934258">Merging Product Model Files</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.14.html#1804298', '');" title="Configuration Merging Guidelines" name="1934263">Configuration Merging Guidelines</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.15.html#1946231', '');" title="Data Model Merging Guidelines" name="1934268">Data Model Merging Guidelines</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.16.html#1947948', '');" title="Updating Product Model API Calls" name="1934283">Updating Product Model API Calls</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.17.html#1947654', '');" title="Merging PolicyCenter Typelists" name="1934288">Merging PolicyCenter Typelists</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.18.html#1909187', '');" title="Upgrading the Business Auto Line Configuration" name="1934293">Upgrading the Business Auto Line Configuration</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.19.html#1947728', '');" title="Changes to the Logging API" name="1934298">Changes to the Logging API</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.20.html#1947353', '');" title="Merging CADiffTree.xml and BADiffTree.xml" name="1934358">Merging CADiffTree.xml and BADiffTree.xml</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.21.html#1947362', '');" title="Changes to Iterators in PCF Files" name="1934363">Changes to Iterators in PCF Files</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.22.html#1947381', '');" title="Updating Namespace on Files Loaded by GX Models" name="1934368">Updating Namespace on Files Loaded by GX Models</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.23.html#1946610', '');" title="Merging Enhancements" name="1934383">Merging Enhancements</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.24.html#1842975', '');" title="Updating PolicyPeriodPlugin.gs" name="1934388">Updating PolicyPeriodPlugin.gs</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.25.html#1947869', '');" title="Consider Enabling Check for Small Cost Changes" name="1934393">Consider Enabling Check for Small Cost Changes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.26.html#1842676', '');" title="Merging systables.xml" name="1934398">Merging systables.xml</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.27.html#1842949', '');" title="Merging Claim Details PCF Files" name="1934403">Merging Claim Details PCF Files</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.28.html#1946056', '');" title="Adding DDL Configuration Options to database-config.xml" name="1934408">Adding DDL Configuration Options to database-config.xml</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.29.html#1946073', '');" title="Merging Changes to Field Validators" name="1934413">Merging Changes to Field Validators</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.30.html#1946114', '');" title="Renaming PCF files According to Their Modes" name="1934418">Renaming PCF files According to Their Modes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.31.html#1916981', '');" title="Merging compatibility-xsd.xml" name="1934443">Merging compatibility-xsd.xml</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.32.html#1903388', '');" title="Merging Display Properties" name="1934448">Merging Display Properties</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.33.html#1904527', '');" title="Merging Other Files" name="1934453">Merging Other Files</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.34.html#1946506', '');" title="Fixing Gosu Issues" name="1934458">Fixing Gosu Issues</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.35.html#1947395', '');" title="Upgrading Rules to PolicyCenter 8.0.3" name="1934463">Upgrading Rules to PolicyCenter 8.0.3</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.36.html#1946020', '');" title="Running PCF Iterator Upgrade" name="1934468">Running PCF Iterator Upgrade</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.37.html#1947131', '');" title="Translating New Display Properties and Typecodes" name="1934473">Translating New Display Properties and Typecodes</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.38.html#1947026', '');" title="Validating the PolicyCenter 8.0.3 Configuration" name="1934483">Validating the PolicyCenter 8.0.3 Configuration</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.39.html#1947002', '');" title="Importing Policy Forms" name="1934488">Importing Policy Forms</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="zChapterTopic_outer" style="margin-left: 57.6pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="zChapterTopic_inner" style="width: 9.899999999999998pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="zChapterTopic_inner"><a href="javascript:WWHClickedPopup('upgrade', 'procedure-config-c.16.40.html#1947093', '');" title="Building and Deploying PolicyCenter 8.0.3" name="1934493">Building and Deploying PolicyCenter 8.0.3</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>

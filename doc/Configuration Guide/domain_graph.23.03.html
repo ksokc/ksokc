@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <!-- MOTW-DISABLED saved from url=(0014)about:internet -->
+    <title>Object Ownership in the Domain Graph</title>
+    <link rel="StyleSheet" href="css/domain_graph.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/webworks.css" type="text/css" media="all" />
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/context.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/towwhdir.js"></script>
+    <script type="text/javascript" language="JavaScript1.2" src="wwhdata/common/wwhpagef.js"></script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        var  WebWorksRootPath = "";
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        // Set reference to top level help frame
+        //
+        var  WWHFrame = WWHGetWWHFrame("", true);
+      // -->
+    </script>
+    <script type="text/javascript" language="JavaScript1.2" src="scripts/expand.js"></script>
+    <!-- THE FOLLOWING IS A GUIDEWIRE STYLE DEFINITION FOR THE LINK TO THIS FEATURE -->
+    <link rel="StyleSheet" href="css/css-guidewire-extra.css" type="text/css" media="all" />
+    <!-- THE FOLLOWING IS A GUIDEWIRE GSCRIPT FUNCTION FOR THE LINK TO THIS FEATURE -->
+    <script type="text/javascript">
+function guidewire_selectall()
+{
+var text_val=eval("document.linktothisurlform.urlfield");
+text_val.focus();
+text_val.select();
+}
+</script>
+  </head>
+  <body onLoad="WWHUpdate();" onUnload="WWHUnload();" onKeyDown="WWHHandleKeyDown((document.all||document.getElementById||document.layers)?event:null);" onKeyPress="WWHHandleKeyPress((document.all||document.getElementById||document.layers)?event:null);" onKeyUp="WWHHandleKeyUp((document.all||document.getElementById||document.layers)?event:null);">
+    <!-- THE FOLLOWING IS A GUIDEWIRE DIV FOR THE 'LINK TO THIS' FEATURE -->
+    <div id="linkToThisPage" class="popup" style="display: none;">
+      <div class="popupTitle">Link Directly to This Page 
+           <a href="#" onclick="var thePopup = getElementById('linkToThisPage');thePopup.style.display='none';return false;"><img class="popupClosebox" src="wwhelp/wwhimpl/common/images/close.gif" /></a></div>
+      <div style="padding:6px;">
+        <div class="popupText" id="linkToThisPageBookmark">An error has occurred if you see this messsage.</div>
+        <form name="linktothisurlform" method="post" action="" style="width:275px;margin:0px">
+          <input type="text" class="popupURLText" id="linkToThisPageURL" name="urlfield" rows="1" cols="55" onClick="guidewire_selectall();" onFocus="guidewire_selectall();"></input>
+        </form>
+      </div>
+    </div>
+    <br />
+    <div class="WebWorks_Breadcrumbs" style="text-align: left;">
+      <span>PolicyCenter Configuration Guide</span> : 
+    <span class="WebWorks_Breadcrumbs" style="text-align: left;"><a class="WebWorks_Breadcrumb_Link" href="p-datamodel_2.html#2484467">Data Model Configuration</a> : <a class="WebWorks_Breadcrumb_Link" href="domain_graph.23.01.html#2484467">The Archiving Domain Graph</a> : Object Ownership in the Domain Graph</span></div>
+    <hr align="left" />
+    <blockquote>
+      <h3 class="H1_-_Heading_1"><a name="2484467">Object Ownership in the Domain Graph</a></h3>
+      <div class="B_-_Body"><a name="2484468">The relationships that the domain graph captures are that of ownership. </a></div>
+      <h4 class="H2_-_Heading_2"><a name="2484470">Ownership in the Domain Graph Through Foreign Keys</a></h4>
+      <div class="B_-_Body"><a name="2344829">Guidewire defines </a><span class="e_-_emphasis">ownership</span> of one object by another by a foreign key between them. In general, a foreign key to object A from object B indicates that object A <span class="e_-_emphasis">owns</span> object B. Generally, foreign keys point from owned objects to owning objects in the domain graph. </div>
+      <div class="B_-_Body"><a name="2439691">In the following example XML metadata definition, the foreign key field </a><span class="cv_-_computer_voice">RootID</span> points to the owner of the entity type that contains the foreign key.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2344250">&lt;foreignkey name="</a><span class="s_-_strong" style="font-style: italic">RootID</span>" </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2344237">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fkentity="</a><span class="s_-_strong" style="font-style: italic">TestGraphRoot</span>" </PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2344238">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desc="The owner of this entity type in the domain graph"/&gt;</a></PRE>
+      <div class="B_-_Body"><a name="2344127">In the preceding example, the owner is the entity type </a><span class="cv_-_computer_voice">TestGraphRoot</span>. </div>
+      <div class="B_-_Body"><a name="2497799"> </a>For example, <span class="cv_-_computer_voice">Note</span> and <span class="cv_-_computer_voice">PolicyPeriod</span> have an ownership relationship. In the base configuration, <span class="cv_-_computer_voice">Note</span> has a foreign key to <span class="cv_-_computer_voice">PolicyPeriod</span>. This foreign key by itself indicates that <span class="cv_-_computer_voice">PolicyPeriod</span> instances own <span class="cv_-_computer_voice">Note</span> instances. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2497800">A </a><span class="cv_-_computer_voice">Note</span> also can be owned by other entities, such as <span class="cv_-_computer_voice">Job</span>.</div>
+      <div class="B_-_Body"><a name="2497801">The following </a><span class="cv_-_computer_voice">Note</span> metadata definition extension illustrates a foreign key that defines an ownership relationship.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2497802">&lt;internalExtension xmlns="http://guidewire.com/datamodel"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497803">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entityName="</a><span class="s_-_strong">Note</span>" javaClass="com.guidewire.pc.domain.note.Note"&gt;</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497804">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497805">&nbsp;&nbsp;&lt;</a><span class="s_-_strong">foreignkey </span>columnName="PolicyPeriodID"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497806">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desc="Associated Policy Period."</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497807">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exportable="false"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497808">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fkentity="</a><span class="s_-_strong">PolicyPeriod</span>"</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497809">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name="</a><span class="s_-_strong">PolicyPeriod</span>"/&gt;</PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497810">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2497811">&lt;/internalExtension&gt;</a></PRE>
+      <div class="B_-_Body"><a name="2497812">In the preceding example, the owner of the </a><span class="cv_-_computer_voice">Note</span> entity is the <span class="cv_-_computer_voice">PolicyPeriod</span> entity. </div>
+      <h4 class="H2_-_Heading_2"><a name="2344871">Inverse Ownership in the Domain Graph</a></h4>
+      <div class="B_-_Body"><a name="2313721">In some cases, an owning object has a foreign key that points to an owned object. This direction of a foreign key is the inverse of typical ownership relationships in the domain graph. To indicate this inverse direction of ownership, you set the </a><span class="cv_-_computer_voice">owner</span> attribute on the foreign key to <span class="cv_-_computer_voice">true</span>.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2313722">&lt;foreignkey name="</a><span class="pc_-_parameter_in_code">OwnedObjectID</span>" </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2451703">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fkentity="</a><span class="pc_-_parameter_in_code">TestGraphOwnedObject</span>" </PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2451704">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><span class="s_-_strong">owner="true"</span>/&gt;</PRE>
+      <div class="B_-_Body"><a name="2451705">In the preceding example, the entity type or entity type extension with the foreign key definition is the owner of the </a><span class="cv_-_computer_voice">TestGraphOwnedObject</span> entity type. </div>
+      <div class="N_-_Note">
+        <span class="n_-_note">Note: </span><a name="2328428">Guidewire discourages the use of inverse ownership relationships. The PolicyCenter data model supports inverse ownership relationships for the rare case in which upgrading the database is unduly cumbersome or time consuming. Do not use this type of relationship as a general rule.</a></div>
+      <h6 class="HS_-_Head_Sub"><a name="2313741">See also</a></h6>
+      <div class="BI_-_Bullet_Item_outer" style="margin-left: 57pt">
+        <table border="0" cellspacing="0" cellpadding="0" summary="" role="presentation">
+          <tr style="vertical-align: baseline">
+            <td>
+              <div class="BI_-_Bullet_Item_inner" style="width: 15pt; white-space: nowrap">
+                <span class="bu_-_bullet">•	</span>
+              </div>
+            </td>
+            <td width="100%">
+              <div class="BI_-_Bullet_Item_inner"><a href="javascript:WWHClickedPopup('config', 'domain_graph.23.11.html#2293623', '');" title="Eliminating Cycles From the Domain Graph" name="2313745">Eliminating Cycles From the Domain Graph</a></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <h4 class="H2_-_Heading_2"><a name="2497818">Ownership Through the Effective Dated Branch</a></h4>
+      <div class="B_-_Body"><a name="2497819">In PolicyCenter, an effective dated entity is owned by the root of the effective dated branch. For example, </a><span class="cv_-_computer_voice">PolicyLocation</span> is an effective dated entity owned by <span class="cv_-_computer_voice">PolicyPeriod</span>.</div>
+      <div class="B_-_Body"><a name="2497820">The following </a><span class="cv_-_computer_voice">PolicyLocation</span> metadata definition illustrates how an effective dated entity is owned by <span class="cv_-_computer_voice">PolicyPeriod</span>.</div>
+      <PRE class="CF_-_Code_First_Line"><a name="2497821">&lt;entity</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497822">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497823">&nbsp;&nbsp;</a><span class="s_-_strong">effDatedBranchType="PolicyPeriod"</span> </PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497824">&nbsp;&nbsp;entity="PolicyLocation"</a></PRE>
+      <PRE class="CM_-_Code_Middle_Line"><a name="2497825">&nbsp;&nbsp;...</a></PRE>
+      <PRE class="CL_-_Code_Last_Line"><a name="2497826">&nbsp;&nbsp;type="effdated"&gt;</a></PRE>
+      <script type="text/javascript" language="JavaScript1.2">
+        <!--
+          // Clear related topics
+          //
+          WWHClearRelatedTopics();
+
+          document.writeln(WWHRelatedTopicsInlineHTML());
+        // -->
+      </script>
+    </blockquote>
+    <script type="text/javascript" language="JavaScript1.2">
+      <!--
+        document.write(WWHRelatedTopicsDivTag() + WWHPopupDivTag() + WWHALinksDivTag());
+      // -->
+    </script>
+  </body>
+</html>
